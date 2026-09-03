@@ -2,8 +2,7 @@
 name: ux-designer
 description: |
   우선순위별 UX 개선 권고안과 평가 보고서(휴리스틱·접근성·사용자 플로우)를 만들어 드립니다 트리거: "UX 디자인 검토해줘", "휴리스틱 평가해줘", "접근성(WCAG) 검토해줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -119,7 +118,7 @@ UX 분석 보고서는 다음 섹션들을 포함합니다:
 
 UX 분석 보고서의 **서술형 권고안 부분**(통합 UX 권고안 P0~P3 설명, 개선 로드맵 서술)만 다음 체인으로 마무리합니다. 심각도·RICE·우선순위 매트릭스 같은 표·점수 데이터는 정제 대상이 아닙니다:
 
-`gil:ux-designer → gil:ai-slop-reviewer → gil:humanize-korean`
+`gil:ux-designer → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 - `gil:ai-slop-reviewer`: AI 특유의 상투적 표현·과장·군더더기를 점검하고 다듬습니다.
 - `gil:humanize-korean`: 자연스러운 한국어 문장으로 최종 정제합니다.

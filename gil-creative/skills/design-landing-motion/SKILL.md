@@ -2,8 +2,7 @@
 name: design-landing-motion
 description: |
   기억에 남는 다이나믹 랜딩 페이지를 만듭니다. 트리거: "랜딩 페이지 만들어 줘", "히어로 인상적으로", "스크롤에 반응하는 사이트"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 uz: n/a
 origin: moai-cowork@f1eb954
 ---

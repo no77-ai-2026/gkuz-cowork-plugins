@@ -22,7 +22,7 @@ effort: low
 
 1. `gil-creative:content-calendar` — 발행 일정·주제 정렬
 2. `gil-creative:blog` — 원본 블로그 글 작성 (WebSearch로 사실 보강 가능)
-3. (원본 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+3. (원본 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 4. 리퍼포징 → `gil-creative:sns-content` + `gil-creative:newsletter` + `gil-creative:card-news`
 5. 각 채널 텍스트도 출력 전 ai-slop-reviewer 재적용
 

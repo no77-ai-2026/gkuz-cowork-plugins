@@ -2,8 +2,7 @@
 name: tax-helper
 description: |
   세금 관련 질문에 답해주는 스킬입니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -159,7 +158,7 @@ version: "2.2.0"
 세무 안내문, 신고 절차 설명, 절세 가이드, 고객 회신문처럼 문장 산출물을 작성한 뒤에는 아래 체인으로 마무리한다.
 
 ```
-tax-helper → gil:ai-slop-reviewer → gil:humanize-korean
+tax-helper → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - **gil:ai-slop-reviewer**: AI 티 나는 표현·과장·상투구 검수 및 수정

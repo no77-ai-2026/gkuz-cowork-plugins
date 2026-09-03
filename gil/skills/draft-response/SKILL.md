@@ -2,8 +2,7 @@
 name: draft-response
 description: |
   고객 문의에 대한 응답 초안을 작성합니다 트리거: "이 문의에 답변 초안 써줘", "환불 요청 이메일 답변 만들어줘", "카카오채널 응답 초안 작성해줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -85,7 +84,7 @@ version: "2.2.0"
 응답 초안을 작성한 뒤에는 다음 체인으로 마무리합니다:
 
 ```
-draft-response → gil:ai-slop-reviewer → gil:humanize-korean
+draft-response → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — AI 티 나는 표현·과잉 수식·기계적 문장 패턴을 검수·수정

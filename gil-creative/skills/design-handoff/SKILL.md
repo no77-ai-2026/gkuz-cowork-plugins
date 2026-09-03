@@ -6,9 +6,9 @@ description: |
   Design package (prompt, context, references, acceptance, checklist),
   brand-voice context, and paste-ready claude.com session bundles.
 user-invocable: false
-version: "2.1.0"
+version: "2.2.1"
 uz: n/a
-origin: moai-cowork@f1eb954
+origin: moai-cowork@61fac40 (v1.2.4, 2026-09-02 동기화)
 ---
 
 > ⚠️ **개발 런타임 전용** — 이 스킬은 MoAI-ADK(Claude Code) 환경을 전제한다. Claude Cowork(Desktop)에서는 `.moai/config` 의존으로 동작하지 않을 수 있다. Desktop 사용자는 `gil-creative:design-handoff-reader`를 사용한다.
@@ -22,7 +22,7 @@ origin: moai-cowork@f1eb954
 
 # Design Handoff Domain Specialist
 
-Assembles the 5-file Claude Design handoff package for the `/design` Path A workflow (the handoff-deliverable step). The package is designed for paste-and-go use in the external claude.com Design product.
+Assembles the 5-file Claude Design handoff package for the `gil-creative:design-workflow` Path A workflow (the handoff-deliverable step). The package is designed for paste-and-go use in the external claude.com Design product.
 
 ## Quick Reference
 
@@ -97,7 +97,7 @@ See [5-section prompt template + brand branches detail](references/prompt-templa
 - References to `.moai/` paths (e.g., `.moai/design/`, `.moai/project/`)
 - References to internal skill / agent names (e.g., `manager-spec`, `design-brief`, `design-handoff-reader`)
 - References to internal workflow step identifiers
-- References to MoAI-specific commands (e.g., `/design`, `/moai plan`)
+- References to MoAI-specific commands (e.g., `/project`, `/moai plan`)
 - Internal implementation details (file structures, Go code, database schemas)
 
 The prompt must read as if written by a human product designer with no knowledge of MoAI's internal structure.

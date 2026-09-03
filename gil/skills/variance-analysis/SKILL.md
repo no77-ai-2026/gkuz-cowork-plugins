@@ -2,8 +2,7 @@
 name: variance-analysis
 description: |
   예산과 실적 차이를 분석해주는 스킬입니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -169,7 +168,7 @@ version: "2.2.0"
 경영진 요약, 원인 분석 코멘트, 개선 권고안, 수정 전망 설명문처럼 문장 산출물을 작성한 뒤에는 아래 체인으로 마무리한다.
 
 ```
-variance-analysis (보고서 서술 부분) → gil:ai-slop-reviewer → gil:humanize-korean
+variance-analysis (보고서 서술 부분) → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - **gil:ai-slop-reviewer**: AI 티 나는 표현·과장·상투구 검수 및 수정

@@ -21,7 +21,7 @@ effort: medium
 ## 워크플로우
 
 1. `gil:proposal-writer` — 제안서 작성 (WebSearch로 고객·산업 보강 가능)
-2. (제안서 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+2. (제안서 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 3. 검수 반영(Edit)해 최종본 완성
 
 ## Cowork 환경 제약

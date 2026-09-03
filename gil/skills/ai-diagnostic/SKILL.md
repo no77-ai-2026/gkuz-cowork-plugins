@@ -2,8 +2,7 @@
 name: ai-diagnostic
 description: |
   AI 기반 다차원 진단 분석 스킬 트리거: "시스템 진단", "문제 분석", "원인 파악"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 

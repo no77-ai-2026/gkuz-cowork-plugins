@@ -26,7 +26,7 @@ effort: medium
 1. `gil-creative:campaign-planner` — 캠페인 목표·구조 기획
 2. `gil-creative:target-script` — 타깃·메시지 스크립트
 3. `gil-creative:sns-content` + `gil-creative:email-sequence` — 실행 콘텐츠
-4. (콘텐츠 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+4. (콘텐츠 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 5. `gil-creative:performance-report` — 성과 리포트
 
 **B. 메타 광고 운영 (구 meta-ads-orchestrator)**

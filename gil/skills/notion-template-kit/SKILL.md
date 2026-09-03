@@ -2,8 +2,7 @@
 name: notion-template-kit
 description: |
   노션 올인원 업무관리·목표·회고 템플릿의 구조를 설계해주는 스킬입니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 

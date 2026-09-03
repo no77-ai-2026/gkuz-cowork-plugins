@@ -2,7 +2,7 @@
 
 > **본 저작물(GIL v2.0.0 번들: gil·gil-creative·gil-commerce)의 라이선스**: Apache License 2.0 ([LICENSE](LICENSE)).
 >
-> **모태**: modu-ai/moai-cowork@f1eb954 (Apache-2.0) — GIL v2.0.0의 신규 포팅·동기화 기준.
+> **모태**: modu-ai/moai-cowork@f1eb954 (Apache-2.0) — GIL v2.0.0의 신규 포팅·동기화 기준. v2.3.0(2026-09-02) @61fac40 · v2.3.1(2026-09-03) @d71addc(v1.2.5 자격증명 배선)로 재동기화(승인 게이트·MCP 주소·OS 범용성). 상세: gil/CHANGELOG-v2.3.0.md
 > 구 모태 modu-ai/cowork-plugins 유래 콘텐츠는 ≤v2.19.0 구간이 MIT([LICENSE.MIT](LICENSE.MIT))이며,
 > v2.20.0+ NC-ND 시기에 차용된 부분은 동일 저작자가 moai-cowork에서 Apache-2.0으로 재공표한
 > 콘텐츠를 새 기초로 삼는다. GIL 오리지널 자산(gil-oda·gil-creative 마법사 7종·연구/교육/커머스 UZ 확장·

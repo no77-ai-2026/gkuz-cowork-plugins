@@ -51,10 +51,10 @@ imweb_<category>(
 
 ## 설치
 
-`.mcp.json`(`plugins/moai-seller/.mcp.json`)에 등록:
+`.mcp.json`(번들 `gil-commerce/.mcp.json`)에 등록:
 
 ```jsonc
-"moai-imweb": {
+"gil-mcp-imweb": {
   "command": "uv",
   "args": ["run", "--directory", "${CLAUDE_PLUGIN_ROOT}/mcp-servers/gil-mcp-imweb", "gil-mcp-imweb"],
   "env": {

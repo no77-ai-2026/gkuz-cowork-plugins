@@ -9,8 +9,7 @@ description: |
   - "리플렛 인쇄물 제작"
   - "bosma reklama" (인쇄 광고, UZ)
   gil-creative:creative-architect 설계를 입력으로 받아 gil:pdf-writer로 PDF를 조립하고, 배경은 gil-creative:image-bridge로 렌더합니다. 인쇄 규격 후처리는 인쇄소 프리플라이트 전제입니다.
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 
 # 인쇄물 빌더 (Print Creative Builder)
@@ -50,7 +49,7 @@ version: "2.1.0"
 | PDF 조립 | `gil:pdf-writer` |
 | 배경 렌더 | `gil-creative:image-bridge` |
 | 브랜드킷 토큰 | `gil-creative:design-system-prep` |
-| 텍스트 마감 | `gil:ai-slop-reviewer`→`gil:humanize-korean`→`gil:korean-spell-check` |
+| 텍스트 마감 | `gil:ai-slop-reviewer`→`gil:korean-spell-check`(민감도 public 시)→`gil:humanize-korean`(마지막, Phase 6 최종 검수) |
 | 규제 | `gil-commerce:commerce-marketing-compliance-kr` |
 
 > UZ/CIS 인쇄·다국어 규칙은 `references/uz-print-creative-builder.md`.

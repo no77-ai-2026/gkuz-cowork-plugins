@@ -10,8 +10,7 @@ description: |
   - "우즈벡 시장용 크리에이티브 설계"
   - "reklama kreativ" (광고 크리에이티브, UZ)
   단독으로도 쓰지만 보통 gil-creative:creative-wizard 코디네이터가 호출합니다. 시장 현지화는 gil-creative:market-profile-engine, 자료 흐름은 gil-creative:material-analyzer, 포맷 산출은 gil-commerce:detail-page-copy·gil-creative:card-news·gil-creative:poster-ad-builder·gil-creative:print-creative-builder로 이어집니다. 텍스트 산출은 마지막에 gil:ai-slop-reviewer → gil:humanize-korean으로 종료합니다.
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 
 # 크리에이티브 아키텍트 (Creative Architect)
@@ -152,7 +151,7 @@ ELSE                                                    → renderMode = "overla
 4. **renderMode 결정**(§6) + 섹션별 이미지 프롬프트(구조 + §4 레이아웃 + 시장 톤 오버레이) 생성.
 5. **CreativeSpec(.md + JSON)** 출력.
 6. **자가검증 체크리스트**(아래) 전수 통과 확인.
-7. 포맷 빌더로 핸드오프. 텍스트 산출은 **gil:ai-slop-reviewer → gil:humanize-korean → gil:korean-spell-check(한국어 시)** 로 종료.
+7. 포맷 빌더로 핸드오프. 텍스트 산출은 **gil:ai-slop-reviewer → gil:korean-spell-check(한국어·민감도 public 시) → gil:humanize-korean(마지막, Phase 6 최종 검수)** 로 종료.
 
 ### 자가검증 체크리스트 (10종)
 - [ ] 8단계 감정 여정 골격 유지, 각 섹션 3요소 명시
@@ -181,7 +180,7 @@ ELSE                                                    → renderMode = "overla
 | 포스터/인쇄 산출 | `gil-creative:poster-ad-builder`·`gil-creative:print-creative-builder` | → 핸드오프 |
 | 이미지 프롬프트 실행 | `gil-creative:image-bridge` (+ `gil-creative:gpt-image-2-prompt`·`gil-creative:gemini-3-image-prompt`) | → 핸드오프 |
 | 규제 점검 | `gil-commerce:commerce-marketing-compliance-kr` | → QA |
-| 텍스트 마감 | `gil:ai-slop-reviewer` → `gil:humanize-korean` → `gil:korean-spell-check` | → QA |
+| 텍스트 마감 | `gil:ai-slop-reviewer` → `gil:korean-spell-check`(민감도 public 시) → `gil:humanize-korean`(마지막, Phase 6 최종 검수) | → QA |
 
 > 상세 UZ/CIS 현지화 규칙은 `references/uz-creative-architect.md` 참조.
 

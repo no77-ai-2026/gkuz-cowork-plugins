@@ -2,8 +2,7 @@
 name: higgsfield-video
 description: |
   Higgsfield MCP 기반 AI 영상을 자연어 요청 한 줄로 생성합니다 트리거: "Higgsfield 영상 만들어줘", "Veo 3로 영상", "Sora 2로 영상 만들어"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -149,6 +148,16 @@ Higgsfield 영상, Sora 2, Google Veo 3, Kling 2.1 Master, Kling 2.5 Turbo, Klin
 | 파라미터 | 값 |
 |---|---|
 | `image_url` 또는 `input_images[]` | 시작 이미지 URL |
+
+### 4.5단계 — 승인 게이트 (크레딧 소진 전, HARD)
+
+5단계 호출은 크레딧이 나가는 호출입니다. 먼저 같은 파라미터에 `get_cost: true`를 넣어 견적(`credits`)과 서버 `adjustments`를 조회(크레딧 0)한 뒤, 코어 `gil-creative:higgsfield-core` §유료 생성 승인 게이트를 그대로 따릅니다.
+
+- **[HARD] 승인 없이 5단계로 넘어가지 않습니다.** 승인서에는 프롬프트 **전문**·모델 id·참조 미디어(`media_id`/`job_id`)·확정 옵션(비율·해상도·품질)·생성 개수·`adjustments`·견적 크레딧과 현재 잔액을 요약 없이 그대로 보여줍니다. 선택지: **이대로 생성(권장) / 고쳐서 다시 견적 / 취소**.
+- **[HARD] `adjustments`는 승인 전에 보여줍니다.** 4단계의 예(오디오를 요청했는데 `generate_audio: false`로 치환)가 바로 이 게이트가 필요한 이유입니다. 6단계 리드백은 이미 돈이 나간 뒤입니다 — 서버가 요청을 바꿨다는 사실은 취소할 수 있을 때 알아야 합니다.
+- 승인 경로는 런타임 중립(코어 §승인 요청 계약): AskUserQuestion이 있으면 그것으로, 없으면 일반 대화로 승인서를 제시하고 응답을 받습니다. 서브에이전트로 실행 중이면 blocker(승인서 포함)로 반환하고 오케스트레이터가 대신 묻습니다. 도구 실행 권한 프롬프트는 승인이 아닙니다.
+- **[HARD] 실패해도 새 잡을 만들지 않습니다.** 애매하게 실패하면 반환된 job ID를 `job_status`로 먼저 확인하고, ID조차 없으면 생성 이력 조회 수단이 있는지 확인한 뒤 사용자 확인을 받고서만 재호출합니다(재시도 = 재견적·재승인).
+- 위 §위험 블록에 해당하는 모델(`gemini_omni` video-references·`minimax_hailuo` 카메라 명령)이면 **그 경고를 승인 화면에 함께 띄웁니다.** 알려진 위험을 아는 상태에서 승인해야 합니다.
 
 ### 5단계 — MCP 호출
 

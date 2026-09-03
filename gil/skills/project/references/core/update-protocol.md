@@ -106,9 +106,9 @@ diff에 맞춰 프로젝트 산출물을 갱신한다. **전면 재작성 금지
 ## 5. 스냅샷 갱신 + evolution-log
 
 1. **스냅샷 리셋** — `.gil/config.json`의 `plugins_installed` + `skills_available`을 `new_inventory`로 갱신. 이로써 `inventory drift`는 0이 된다(다음 drift 감지의 새 기준).
-2. **evolution-log 기록** — `AGENTS.md` 말미 `<!-- evolution-log -->`에 1줄 추가:
+2. **evolution-log 기록** — `.gil/evolution/log.md`(정본)에 1줄 추가. `AGENTS.md`에는 쓰지 않는다:
    - 형식: `inventory drift | update | <추가 N / 변경 N / 제거 N> | <신호-매칭 요지>`
-3. **evolution-log 큐레이션** — 최근 10건 유지, 초과분은 `.gil/evolution/log.md`로 이관(SKILL.md §Recursive Self-Improvement 큐레이션 규칙).
+3. **evolution-log 큐레이션** — `log.md` 상단에 최근 10건 요약을 유지하고 그 아래에 전체 이력을 누적(SKILL.md §Recursive Self-Improvement 큐레이션 규칙).
 
 ---
 
@@ -138,7 +138,7 @@ diff에 맞춰 프로젝트 산출물을 갱신한다. **전면 재작성 금지
 | `.gil/config.json` | `plugins_installed` + `skills_available` 스냅샷 — diff 비교 기준이자 갱신 대상 |
 | `.gil/context.md` | 프로젝트 맥락 — §3 세션 신호 분석 입력 |
 | `.gil/evolution/signals.md` | 누적 교정·체인 실패 신호 — §3 세션 신호 분석 입력 |
-| `.gil/evolution/log.md` | evolution-log 이관 대상(10건 초과분) |
+| `.gil/evolution/log.md` | 자가 개선 이력 **정본**(최근 10건 요약 + 전체 누적) |
 | `./AGENTS.md` | 워크플로우 표·HARD 블록 — §4-1 동기화 대상 |
 | `./CLAUDE.md` | `@AGENTS.md` 포인터 — 무결성만 점검, 내용 동기화 대상 아님 |
 | `./.claude/agents/*.md` | 스킬 체인 에이전트 — §4-2 동기화 대상 |

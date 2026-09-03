@@ -24,7 +24,7 @@ effort: medium
 2. `gil:assessment-creator` — 평가·과제 설계
 3. `gil:course-operations-manual` — 운영 매뉴얼
 4. `gil:course-followup-sequence` — 수강 후 후속 시퀀스
-5. (교안·안내 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+5. (교안·안내 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 
 ## Cowork 환경 제약
 

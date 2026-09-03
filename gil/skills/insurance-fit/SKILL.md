@@ -2,8 +2,7 @@
 name: insurance-fit
 description: |
   나에게 꼭 필요한 보험만 남기고 과보험·중복을 정리하도록 돕는 스킬입니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 

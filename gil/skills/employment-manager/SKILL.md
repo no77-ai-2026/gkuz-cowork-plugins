@@ -2,8 +2,7 @@
 name: employment-manager
 description: |
   채용 프로세스 전반을 관리해주는 스킬입니다 트리거: "JD 작성해줘", "면접 질문 만들어줘", "신입 온보딩 계획 짜줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -107,7 +106,7 @@ JD·면접 질문·온보딩 계획·멘토링 커리큘럼 본문은 사람이 
 **텍스트 후처리 체인 (JD·면접 질문·온보딩 계획 등 산문 산출물)**:
 
 ```
-employment-manager → gil:ai-slop-reviewer → gil:humanize-korean
+employment-manager → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — AI 티 패턴(기계적 어투, 상투적 채용 표현) 검수·수정

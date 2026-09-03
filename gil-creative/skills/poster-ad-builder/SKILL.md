@@ -9,8 +9,7 @@ description: |
   - "배너 광고 시안"
   - "reklama afishasi" (광고 포스터, UZ)
   gil-creative:creative-architect 설계를 입력으로 받아 gil-creative:image-bridge로 배경을 렌더하고, 카피 오버레이 레이아웃을 산출합니다. 카드뉴스는 gil-creative:card-news, 상세페이지는 gil-commerce:detail-page-image로 갈라집니다.
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 
 # 포스터/광고 빌더 (Poster & Ad Builder)
@@ -53,7 +52,7 @@ version: "2.1.0"
 | 배경 렌더 | `gil-creative:image-bridge` (+ 프롬프트 빌더) |
 | 브랜드킷 토큰 | `gil-creative:design-system-prep` |
 | SNS 카피·해시태그 | `gil-creative:sns-content`·`gil-creative:copywriting` |
-| 텍스트 마감 | `gil:ai-slop-reviewer`→`gil:humanize-korean`→`gil:korean-spell-check` |
+| 텍스트 마감 | `gil:ai-slop-reviewer`→`gil:korean-spell-check`(민감도 public 시)→`gil:humanize-korean`(마지막, Phase 6 최종 검수) |
 | 규제 | `gil-commerce:commerce-marketing-compliance-kr` |
 
 > UZ/CIS 채널 규격·후조판은 `references/uz-poster-ad-builder.md`.

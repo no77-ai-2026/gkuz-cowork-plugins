@@ -2,8 +2,7 @@
 name: iros-registry-automation
 description: |
   대법원 인터넷등기소(IROS, iros.go.kr)에서 법인·부동산 등기부등본(등기사항증명서)을 트리거: "법인등기부등본 100개 한번에 떼야 해", "회사 100개 등기부 정리해줘", "고객사 등기부등본 일괄 발급"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -48,15 +47,39 @@ version: "2.2.0"
 - 결제 카드, TouchEn nxKey 사전 설치
 - upstream 참고 구현 clone 후 reviewed SHA로 고정
 
+**macOS / Linux** — 터미널에서:
+
 ```bash
 git clone https://github.com/challengekim/iros-registry-automation.git
 cd iros-registry-automation
 git checkout 7c6924b2ff88d693a12556659188cb91041e5097
-python3 -m venv .venv && source .venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 playwright install chromium
 cp config.json.example config.json
 ```
+
+**Windows** — PowerShell에서 (가상환경 활성화 경로와 파이썬 명령 이름이 다릅니다):
+
+```powershell
+git clone https://github.com/challengekim/iros-registry-automation.git
+cd iros-registry-automation
+git checkout 7c6924b2ff88d693a12556659188cb91041e5097
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+playwright install chromium
+copy config.json.example config.json
+```
+
+> **왜 두 벌인가**: `source .venv/bin/activate`는 macOS/Linux 전용 경로이고, Windows는
+> `.venv\Scripts\Activate.ps1`입니다. 또 `python3` 명령은 Windows python.org 설치본에
+> 존재하지 않습니다(`python` 또는 `py -3`). 아래 워크플로우의 `python ...` 실행 예시도
+> macOS/Linux에서는 `python3`으로 읽으세요.
+>
+> PowerShell이 스크립트 실행을 막으면 `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`를
+> 먼저 실행한 뒤 활성화합니다.
 
 업스트림 핀(SHA)을 변경할 때는 신뢰 경계가 바뀌므로 새 upstream diff를 검토하고 같은 PR에서 갱신합니다.
 
@@ -66,11 +89,29 @@ cp config.json.example config.json
 
 법인등록번호·상호명·주소·동호수 등 민감 정보는 공개 저장소·PR·테스트 로그에 절대 넣지 않습니다.
 
+**macOS / Linux**:
+
 ```bash
 workdir="$(mktemp -d "${TMPDIR:-/tmp}/iros-registry.XXXXXX")"
 chmod 700 "$workdir"
 mkdir -p "$workdir/downloads" "$workdir/logs" "$workdir/output" "$workdir/tmp-downloads"
 ```
+
+**Windows** — PowerShell에서:
+
+```powershell
+$stamp = [guid]::NewGuid().ToString("N").Substring(0,8)
+$workdir = Join-Path $env:TEMP "iros-registry-$stamp"
+New-Item -ItemType Directory -Path $workdir | Out-Null
+foreach ($sub in "downloads","logs","output","tmp-downloads") {
+  New-Item -ItemType Directory -Path (Join-Path $workdir $sub) | Out-Null
+}
+$workdir
+```
+
+> Windows의 `%TEMP%`는 사용자 프로필 아래라 이미 해당 계정만 접근 가능합니다 — `chmod 700`에
+> 해당하는 별도 조치가 필요 없습니다. 이후 안내의 `$workdir/...` 경로는 PowerShell에서
+> `$workdir\...`로 읽으세요.
 
 법인 입력 예시 (`$workdir/corp-input.json`):
 

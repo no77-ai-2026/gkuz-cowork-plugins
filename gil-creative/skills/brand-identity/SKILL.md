@@ -2,8 +2,7 @@
 name: brand-identity
 description: |
   기업·제품 브랜드의 이름·슬로건·톤앤매너·색상까지 한 번에 정리한 브랜드 가이드 문서를 만들어 드립니다 트리거: "친환경 생활용품 브랜드 만들어줘, 2030 여성 타깃", "우리 스타트업 이름 후보 좀 지어줘", "브랜드명은 정했으니 슬로건이랑 톤앤매너만 만들어줘"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -190,7 +189,7 @@ version: "2.1.0"
 
 슬로건·태그라인·브랜드 스토리·매니페스토·톤앤매너 가이드 등 **텍스트 산출물**은 발행 전 반드시 후처리 체인을 거칩니다. 색상 시스템·SMILE 평가표 등 표·수치 산출물은 대상이 아닙니다.
 
-**권장 체인**: `brand-identity → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인**: `brand-identity → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

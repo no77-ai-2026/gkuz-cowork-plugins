@@ -1,8 +1,8 @@
 {
   "name": "gil-creative",
   "displayName": "GIL Creative — 콘텐츠·마케팅·창작·미디어·디자인",
-  "version": "2.1.0",
-  "description": "[한·UZ 듀얼] GIL 크리에이티브 애드온 — 블로그·SNS·카드뉴스·뉴스레터·카피·캠페인·SEO 마케팅, 출판(book-*)·스토리 IP(story-*, 웹툰·웹소설·시나리오), Higgsfield 이미지·영상, TTS·오디오, Claude Design 핸드오프·디자인 시스템, 광고 크리에이티브 마법사(creative-wizard), Threads·인스타그램 발행 등 96개 스킬. MCP 7종(post-bridge·typefully·wordpress·meta-ads·higgsfield·ElevenLabs·gil-mcp-threads-poster). 코어 gil 번들과 함께 설치 권장.",
+  "version": "2.2.1",
+  "description": "[한·UZ 듀얼] GIL 크리에이티브 애드온 — 블로그·SNS·카드뉴스·뉴스레터·카피·캠페인·SEO 마케팅, 출판(book-*)·스토리 IP(story-*, 웹툰·웹소설·시나리오), Higgsfield 이미지·영상, TTS·오디오, Claude Design 핸드오프·디자인 시스템, 광고 크리에이티브 마법사(creative-wizard), Threads·인스타그램 발행 등 96개 스킬. MCP 6종(typefully·wordpress·meta-ads·higgsfield·ElevenLabs·gil-mcp-threads-poster). 코어 gil 번들과 함께 설치 권장.",
   "author": {
     "name": "gil"
   },
@@ -84,5 +84,37 @@
     "인스타그램",
     "브랜드"
   ],
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "userConfig": {
+    "THREADS_ACCESS_TOKEN": {
+      "type": "string",
+      "title": "Threads 액세스 토큰",
+      "description": "Meta 개발자센터에서 발급한 Threads Graph API 토큰(장기 60일).",
+      "sensitive": true
+    },
+    "THREADS_USER_ID": {
+      "type": "string",
+      "title": "Threads 사용자 ID",
+      "description": "발행 대상 Threads 계정의 숫자 ID.",
+      "sensitive": false
+    },
+    "IG_ACCESS_TOKEN": {
+      "type": "string",
+      "title": "Instagram 액세스 토큰",
+      "description": "인스타그램 동시 발행을 쓸 때만 필요합니다.",
+      "sensitive": true
+    },
+    "IG_USER_ID": {
+      "type": "string",
+      "title": "Instagram 사용자 ID",
+      "description": "Professional(비즈니스·크리에이터) 계정의 숫자 ID.",
+      "sensitive": false
+    },
+    "ELEVENLABS_API_KEY": {
+      "type": "string",
+      "title": "ElevenLabs API 키",
+      "description": "elevenlabs.io/app/settings/api-keys 에서 발급합니다.",
+      "sensitive": true
+    }
+  }
 }

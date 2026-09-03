@@ -2,8 +2,7 @@
 name: research-analysis
 description: |
   [한·UZ 듀얼] 통계·데이터 분석 가이드를 제공합니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 

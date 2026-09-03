@@ -2,8 +2,7 @@
 name: marketplace-coupang-ads
 description: |
   쿠팡 광고 풀세트를 자연어로 분석·최적화합니다 트리거: "쿠팡 광고 분석해줘", "쿠팡 AI스마트광고 세팅", "쿠팡 매출최적화 캠페인"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 

@@ -36,10 +36,10 @@ Phase 1 인터뷰 첫 질문 전, 사용자 발화에서 역할 힌트를 빠르
 
 | 발화 힌트 | 감지 역할 | 주요 체인 진입 스킬 |
 |---|---|---|
-| 사업계획·IR·시장조사·전략·창업·정부지원 | 실무 | `consult-strategy` → `doc-pptx` |
-| 블로그·카드뉴스·뉴스레터·카피·SNS·랜딩 | 실무 | `content-blog` / `content-card-news` / `marketing-landing-page` |
-| PPT·한글·Word·Excel·공문·계약서·부가세 | 실무 | `office-*` / `legal-*` / `finance-tax-helper` |
-| 상세페이지·스마트스토어·쿠팡·이커머스 | 실무 | `commerce-product-detail` → `commerce-marketplace-*` |
+| 사업계획·IR·시장조사·전략·창업·정부지원 | 실무 | `gil:strategy-planner` → `gil:pptx-designer` |
+| 블로그·카드뉴스·뉴스레터·카피·SNS·랜딩 | 실무 | `gil-creative:blog` / `gil-creative:card-news` / `gil-creative:landing-page` |
+| PPT·한글·Word·Excel·공문·계약서·부가세 | 실무 | `office-*` / `legal-*` / `gil:tax-helper` |
+| 상세페이지·스마트스토어·쿠팡·이커머스 | 실무 | `gil-commerce:product-detail` → `commerce-marketplace-*` |
 | 소설·웹툰·웹소설·시나리오·콘티·출판·원고 | **글쓰기 작가** | `book-concept-planner` / `story-webtoon-planner` / `story-webnovel-writer` |
 | 캐릭터 시트·표지 일러스트·프리비즈·IP 피칭 | **글쓰기 작가** | `story-character-sheet` / `story-cover-art` / `story-ip-pitch` |
 
@@ -81,26 +81,26 @@ Phase 3 체인 설계는 인터뷰 답변→프리셋 매칭으로 직행하지 
 
 ## 3. 스킬 체인 프리셋 (주요 산출물)
 
-텍스트 산출물 체인은 **반드시 `ai-slop-reviewer`로 종료**하며, 한국어 최종본은 직후 `humanize-korean` 2차 패스를 추가한다. 비텍스트(차트·데이터·숫자·미디어)는 ai-slop 단계를 생략한다.
+텍스트 산출물 체인의 검수 단계는 **등급제**(common-rules §1·§6)가 정한다 — ⚡초안은 검수 없음, ◐작업본은 `ai-slop-reviewer` 1회, **◆최종본은 ⟨한국어 감사 3단⟩ `ai-slop-reviewer` → `korean-spell-check`(민감도 public 시) → `humanize-korean`(마지막, Phase 6 최종 검수)** 로 종료한다. 아래 프리셋의 `→ ⟨감사⟩`는 이 3단을 뜻하며 ◆최종본에서만 실행된다. 비텍스트(차트·데이터·숫자·미디어)는 감사를 생략한다.
 
 ### 3-1. 실무 체인
 
 | 산출물 | 권장 체인 |
 |---|---|
-| 사업계획서(PPT) | `consult-strategy` → `doc-pptx` → `ai-slop-reviewer` |
-| 사업계획서(Word) | `consult-strategy` → `consult-market` → `doc-docx` → `ai-slop-reviewer` |
-| IR 피칭덱 | `finance-investor-relations` → `doc-pptx` → `ai-slop-reviewer` |
-| 시장조사 리포트 | `consult-market` → `doc-docx` → `ai-slop-reviewer` |
-| 블로그 | `content-blog` → `ai-slop-reviewer` → `humanize-korean` |
-| 카드뉴스 | `content-card-news` → `ai-slop-reviewer` |
-| 뉴스레터 | `content-newsletter` → `ai-slop-reviewer` |
-| 랜딩(HTML) | `content-copywriting` → `marketing-landing-page` → `ai-slop-reviewer` |
-| 계약서 초안 | `legal-contract-review` / `legal-nda-triage` → `doc-docx` → `ai-slop-reviewer` |
-| 부가세 신고 | `finance-tax-helper` (숫자 — ai-slop 생략) |
-| 재무제표 | `finance-financial-statements` → `doc-xlsx` (숫자 — ai-slop 생략) |
-| 한글 공문 | `doc-hwp` → `ai-slop-reviewer` |
-| 상세페이지 | `commerce-product-detail` → `ai-slop-reviewer` |
-| 주간보고 | `collab-pm-report` → `ai-slop-reviewer` |
+| 사업계획서(PPT) | `gil:strategy-planner` → `gil:pptx-designer` → ⟨감사:슬라이드⟩ |
+| 사업계획서(Word) | `gil:strategy-planner` → `gil:market-analyst` → `gil:docx-generator` → ⟨감사:산문⟩ |
+| IR 피칭덱 | `gil:investor-relations` → `gil:pptx-designer` → ⟨감사:슬라이드⟩ |
+| 시장조사 리포트 | `gil:market-analyst` → `gil:docx-generator` → ⟨감사:산문⟩ |
+| 블로그 | `gil-creative:blog` → ⟨감사:산문⟩ |
+| 카드뉴스 | `gil-creative:card-news` → ⟨감사:카피⟩ |
+| 뉴스레터 | `gil-creative:newsletter` → ⟨감사:산문⟩ |
+| 랜딩(HTML) | `gil-creative:copywriting` → `gil-creative:landing-page` → ⟨감사:카피⟩ |
+| 계약서 초안 | `gil:contract-review` / `gil:nda-triage` → `gil:docx-generator` → ⟨감사:산문⟩(민감 — spell-check 생략) |
+| 부가세 신고 | `gil:tax-helper` (숫자 — ai-slop 생략) |
+| 재무제표 | `gil:financial-statements` → `gil:xlsx-creator` (숫자 — ai-slop 생략) |
+| 한글 공문 | `gil:hwpx-writer` → ⟨감사:산문⟩ |
+| 상세페이지 | `gil-commerce:product-detail` → ⟨감사:카피⟩ |
+| 주간보고 | `gil:weekly-report` → ⟨감사:산문⟩ |
 
 ### 3-2. 글쓰기 작가 체인 (story·book)
 
@@ -120,9 +120,9 @@ Phase 3 체인 설계는 인터뷰 답변→프리셋 매칭으로 직행하지 
 
 | 산출물 | 스킬 | 비고 |
 |---|---|---|
-| 이미지 | `media-higgsfield-image` | Higgsfield MCP — ai-slop 생략 |
-| 영상 | `media-higgsfield-video` | Higgsfield MCP — ai-slop 생략 |
-| 음성·TTS·더빙 | `media-audio-gen` | ElevenLabs MCP — ai-slop 생략 |
+| 이미지 | `gil-creative:higgsfield-image` | Higgsfield MCP — ai-slop 생략 |
+| 영상 | `gil-creative:higgsfield-video` | Higgsfield MCP — ai-slop 생략 |
+| 음성·TTS·더빙 | `gil-creative:audio-gen` | ElevenLabs MCP — ai-slop 생략 |
 
 ---
 

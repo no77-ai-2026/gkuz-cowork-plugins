@@ -2,8 +2,7 @@
 name: marketplace-curation
 description: |
   카카오 메이커스·무신사·29CM 등 한국 큐레이션 커머스 채널 입점 가이드 스킬입니다 트리거: "카카오 메이커스 입점", "무신사 셀러", "29CM 입점"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 

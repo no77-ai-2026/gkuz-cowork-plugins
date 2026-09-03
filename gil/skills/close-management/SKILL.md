@@ -2,8 +2,7 @@
 name: close-management
 description: |
   월말·분기·연간 결산을 도와주는 스킬입니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -161,7 +160,7 @@ K-IFRS 기준 계정 마감, 급여 정산, 세무 일정 관리, 결산 보고�
 결산 보고서, 경영진 요약, 비용 분석 코멘트처럼 문장 산출물을 작성한 뒤에는 반드시 아래 체인으로 마무리한다.
 
 ```
-close-management → gil:ai-slop-reviewer → gil:humanize-korean
+close-management → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - **gil:ai-slop-reviewer**: AI 티 나는 표현·과장·상투구 검수 및 수정

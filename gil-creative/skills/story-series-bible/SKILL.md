@@ -2,7 +2,7 @@
 name: story-series-bible
 description: |
   연재 상태 원장 스킬. 마스터 기획서 파일을 소유하고, 회차를 만들 때마다 에피소드 현황표를 갱신해 "이전 회차까지의 상태"를 복원한다. 웹툰 주 1회·웹소설 일일 연재는 수개월~수년 이어지고 그 사이 세션이 수십 번 끊기므로, 원장이 없으면 5화쯤부터 캐릭터·복선·톤이 표류한다. 신규 기획과 시리즈 재호출 두 모드… 트리거: "이전 회차까지의 상태", "시리즈 기획서 만들어줘", "연재 마스터 문서"
-version: "2.1.0"
+version: "2.2.1"
 uz: n/a
 origin: moai-cowork@f1eb954
 ---
@@ -138,6 +138,7 @@ Step 3. 현황표 갱신 (불변식 — 반드시)
 | 식자 참조 | `story-webtoon-lettering` | 회차 원고의 말풍선·서체·SFX |
 | 연속성 감사 | `story-continuity-auditor` (에이전트) | 다회차 캐릭터·플롯·설정 연속성(Soul-ID 포함)을 원장 대비로 검증 |
 | Post-검수 (텍스트 산출) | `gil:ai-slop-reviewer` → `gil:humanize-korean` | 원고 텍스트 1차 후처리 → 2차 한국어 정밀 윤문 |
+| Post-검수 (◆최종본) | 최종 검수 (`gil:humanize-korean` Phase 6) | 원문↔윤문본 직접 대조 — 의미 보존·과윤문 역방향 (생략 불가) |
 
 ## 11. References
 

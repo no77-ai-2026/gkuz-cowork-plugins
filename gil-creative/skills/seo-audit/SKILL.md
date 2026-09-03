@@ -2,8 +2,7 @@
 name: seo-audit
 description: |
   네이버·구글·AI 검색(GEO)에서 잘 노출되는지 점검하고, 검색 순위를 올릴 개선안과 추천 키워드를 담은 SEO 감사 보고서를 만들어 드립니다 트리거: "우리 블로그 SEO 감사해줘", "네이버 상위 노출 전략 짜줘", "키워드 분석해줘"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -217,7 +216,7 @@ ChatGPT·Perplexity·Claude·네이버 AI 브리핑·구글 AI Overview가 답�
 
 감사 보고서의 서술형 권고·개선 전략·인사이트 등 **prose 산출물**은 발행 전 후처리 체인을 거칩니다. 추천 키워드 목록·기술 SEO 체크리스트·점수 표 등 **수치·표 산출물은 대상이 아닙니다**.
 
-**권장 체인(서술 권고)**: `seo-audit(서술 권고) → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인(서술 권고)**: `seo-audit(서술 권고) → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

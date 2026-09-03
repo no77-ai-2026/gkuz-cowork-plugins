@@ -2,8 +2,7 @@
 name: people-operations
 description: |
   원격 근무와 팀 운영 정책을 설계해주는 스킬입니다 트리거: "재택근무 정책 만들어줘", "협업 도구 추천해줘", "비동기 커뮤니케이션 가이드 만들어줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -147,7 +146,7 @@ version: "2.2.0"
 **텍스트 후처리 체인 (정책 문서·가이드라인 등 산문 산출물)**:
 
 ```
-people-operations → gil:ai-slop-reviewer → gil:humanize-korean
+people-operations → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — AI 티 패턴(기계적 어투, 상투적 정책 표현) 검수·수정

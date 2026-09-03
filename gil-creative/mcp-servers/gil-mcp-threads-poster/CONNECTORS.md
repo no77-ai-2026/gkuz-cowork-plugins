@@ -1,4 +1,4 @@
-# Threads(Meta) 연동 가이드 — `moai-threads-poster` MCP
+# Threads(Meta) 연동 가이드 — `gil-creative` MCP
 
 Threads 는 **OAuth 2.0** 으로 인증하며, 발행하려면 **장기 액세스 토큰(60일)** 이 필요하다.
 본 MCP 서버는 사용자가 (브라우저로) 최초 1회 발급받은 장기 토큰을 환경변수로 받아 사용한다.
@@ -104,15 +104,48 @@ curl "https://graph.threads.net/refresh_access_token"
   &access_token=<LONG_LIVED_TOKEN>
 ```
 
+## 자격증명을 어디에 넣는가 (2026-09-03 갱신)
+
+셸 환경변수만으로는 부족하다. **Claude 데스크톱·Codex CLI·Codex 데스크톱은 `.mcp.json` 의
+`${KEY}` 를 확장하지 않고 문자열 그대로 서버에 넘긴다**(실측). 그래서 이 서버는 값을
+아래 순서로 해석한다 — `gil_mcp_core/credentials.py`.
+
+1. 실제 값이 든 환경변수 (자리표시자·빈 값은 없는 것으로 본다)
+2. `~/.gil/mcp/threads.json` — Windows 는 `C:\Users\<사용자>\.gil\mcp\threads.json`
+3. 없으면 기본값
+
+파일 형식은 키와 값을 짝지은 JSON 객체 하나다:
+
+```json
+{
+  "THREADS_ACCESS_TOKEN": "<LONG_LIVED_TOKEN>",
+  "THREADS_USER_ID": "<THREADS_USER_ID>",
+  "IG_ACCESS_TOKEN": "<선택: 인스타 동시 발행용>",
+  "IG_USER_ID": "<선택: 인스타 계정 ID>"
+}
+```
+
+Claude 에서는 `.claude-plugin/plugin.json` 의 `userConfig` 선언에 따라 앱이 입력 폼을 띄우고
+민감 항목을 키체인에 보관한다. 두 경로를 같이 써도 되며, 환경변수 쪽이 우선한다.
+
+아래 환경변수 안내는 **개발 중 셸에서 직접 넣을 때**의 참고다.
+
 ## 8. 환경변수 설정
 
-셸 프로필(`~/.zshrc` / `~/.bashrc`) 또는 Claude Code 환경에:
+**macOS / Linux** — 셸 프로필(`~/.zshrc` / `~/.bashrc`)에:
 
 ```bash
 export THREADS_ACCESS_TOKEN="<LONG_LIVED_TOKEN>"
 export THREADS_USER_ID="<THREADS_USER_ID>"
-# 선택: 발행 전 대기(초), 기본 30
-export THREADS_PUBLISH_DELAY="30"
+export THREADS_PUBLISH_DELAY="30"   # 선택: 발행 전 대기(초), 기본 30
+```
+
+**Windows** — PowerShell 프로필(`$PROFILE`)에, 또는 영구 설정하려면 `setx`:
+
+```powershell
+$env:THREADS_ACCESS_TOKEN = "<LONG_LIVED_TOKEN>"
+$env:THREADS_USER_ID = "<THREADS_USER_ID>"
+$env:THREADS_PUBLISH_DELAY = "30"   # 선택: 발행 전 대기(초), 기본 30
 ```
 
 `.mcp.json` 의 `env` 블록은 `${VAR}` 보간으로 이 환경변수를 서버에 전달한다.
@@ -221,9 +254,18 @@ Meta 정책에 따라 발행 전 **Page Publishing Authorization** 완료가 요
 
 ## I-6. 환경변수 설정
 
+**macOS / Linux**:
+
 ```bash
 export IG_ACCESS_TOKEN="<PAGE_LONG_TOKEN>"
 export IG_USER_ID="<instagram_business_account ID>"
+```
+
+**Windows** (PowerShell):
+
+```powershell
+$env:IG_ACCESS_TOKEN = "<PAGE_LONG_TOKEN>"
+$env:IG_USER_ID = "<instagram_business_account ID>"
 ```
 
 `.mcp.json` 의 `env` 블록이 `${IG_ACCESS_TOKEN}` / `${IG_USER_ID}` 보간으로 서버에 전달한다.

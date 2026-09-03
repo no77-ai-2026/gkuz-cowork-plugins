@@ -2,8 +2,7 @@
 name: blog
 description: |
   네이버·티스토리·브런치·WordPress·Ghost에 바로 올릴 수 있는 블로그 포스팅(제목·목차·본문·CTA·SEO 메타)을 완성해 드립니다 트리거: "네이버 블로그에 스타트업 자금 조달 글 써줘", "티스토리에 SEO 최적화 블로그 글 작성해줘", "브런치 스타일 회고 에세이 써줘"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -186,12 +185,12 @@ version: "2.1.0"
 
 ## 발행 (WordPress MCP)
 
-ai-slop 검수 → humanize 체인까지 마친 완성 포스팅은, 이 플러그인의 `.mcp.json`에 등록된 WordPress MCP 커넥터(mcp.wordpress.com)로 바로 발행할 수 있습니다.
+ai-slop 검수 → humanize 체인까지 마친 완성 포스팅은, 이 플러그인의 `.mcp.json`에 등록된 WordPress MCP 커넥터(public-api.wordpress.com, OAuth)로 바로 발행할 수 있습니다.
 
 - 흐름: **draft 저장 → 사용자 검토 → 발행** (제목·본문·카테고리·태그·특성 이미지 반영)
 - 커넥터 미연결 시 마크다운 카피만 반환하고 "Settings > Connectors에서 WordPress 연결" 안내
 - 네이버·티스토리·브런치·Ghost는 발행 자동화 대상이 아니므로 플랫폼 최적화 마크다운을 생성합니다(발행은 수동)
-- SNS 동시 발행이 필요하면 같은 `.mcp.json`의 post-bridge·typefully 커넥터로 크로스포스트할 수 있습니다
+- SNS 동시 발행이 필요하면 같은 `.mcp.json`의 typefully 커넥터(mcp.typefully.com, OAuth)로 크로스포스트할 수 있습니다
 
 ## 관련 스킬
 

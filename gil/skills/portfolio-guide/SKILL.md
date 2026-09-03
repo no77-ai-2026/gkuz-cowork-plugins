@@ -2,8 +2,7 @@
 name: portfolio-guide
 description: |
   한국 신입 취준생·재직자를 위한 분야별 포트폴리오 구성과 프로젝트 기술서 작성 스킬입니다 트리거: "포트폴리오 만들어줘", "프로젝트 정리해줘", "노션 포트폴리오 1시간 만에"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -300,7 +299,7 @@ AX(AI Transformation) 시대의 디자이너는 화면을 예쁘게 만드는 �
 프로젝트 기술서·About 단락·케이스 스터디·README 본문 등 포트폴리오의 서술 텍스트는 모두 사람이 읽는 산출물입니다. 초안 완성 후 다음 체인을 거쳐 AI 패턴을 제거하고 자연스러운 한국어로 다듬습니다.
 
 ```
-gil:portfolio-guide → gil:ai-slop-reviewer → gil:humanize-korean
+gil:portfolio-guide → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — AI 생성 패턴(범용 표현·클리셰·형용사 남발) 1차 검수·교정

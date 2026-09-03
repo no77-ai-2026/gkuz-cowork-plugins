@@ -2,8 +2,7 @@
 name: book-target-reader
 description: |
   [한·UZ 듀얼] 도서 타깃 독자 페르소나·JTBD(Jobs To Be Done)·페인포인트 매트릭스를 단계적으로 작성 트리거: "타깃 독자 페르소나 설계", "독자 분석", "독자 정의"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 

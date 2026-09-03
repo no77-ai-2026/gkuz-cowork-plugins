@@ -24,7 +24,7 @@ effort: low
 2. `gil:draft-response` — 응답 초안
 3. `gil:escalation-manager` — 에스컬레이션 판단·전달
 4. `gil:kb-article` — 반복 문의 KB화
-5. (고객 응답·KB 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+5. (고객 응답·KB 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 
 ## Cowork 환경 제약
 

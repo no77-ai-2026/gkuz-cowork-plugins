@@ -64,11 +64,38 @@ refresh_token 자체가 만료(2주)되면 위 절차를 다시 밟아야 합니
 
 ```bash
 # uv 필수 (없으면): curl -LsSf https://astral.sh/uv/install.sh | sh
-cd mcp-servers/gil-mcp-cafe24
+cd <플러그인 루트>/mcp-servers/gil-mcp-cafe24
 uv sync
 ```
 
 소스는 플러그인에 자체 vendor — PyPI 게시 불필요, 설치 즉시 작동.
+
+## 자격증명을 어디에 넣는가 (2026-09-03 갱신)
+
+셸 환경변수만으로는 부족하다. **Claude 데스크톱·Codex CLI·Codex 데스크톱은 `.mcp.json` 의
+`${KEY}` 를 확장하지 않고 문자열 그대로 서버에 넘긴다**(실측). 그래서 이 서버는 값을
+아래 순서로 해석한다 — `gil_mcp_core/credentials.py`.
+
+1. 실제 값이 든 환경변수 (자리표시자·빈 값은 없는 것으로 본다)
+2. `~/.gil/mcp/cafe24.json` — Windows 는 `C:\Users\<사용자>\.gil\mcp\cafe24.json`
+3. 없으면 기본값
+
+파일 형식은 키와 값을 짝지은 JSON 객체 하나다:
+
+```json
+{
+  "CAFE24_MALL_ID": "<몰 ID>",
+  "CAFE24_CLIENT_ID": "<클라이언트 ID>",
+  "CAFE24_CLIENT_SECRET": "<클라이언트 시크릿>",
+  "CAFE24_ACCESS_TOKEN": "<최초 발급 access token>",
+  "CAFE24_REFRESH_TOKEN": "<최초 발급 refresh token>"
+}
+```
+
+Claude 에서는 `.claude-plugin/plugin.json` 의 `userConfig` 선언에 따라 앱이 입력 폼을 띄우고
+민감 항목을 키체인에 보관한다. 두 경로를 같이 써도 되며, 환경변수 쪽이 우선한다.
+
+아래 환경변수 안내는 **개발 중 셸에서 직접 넣을 때**의 참고다.
 
 ## 환경변수
 
@@ -88,7 +115,7 @@ uv sync
 ## .mcp.json 등록 (이미 플러그인에 반영됨)
 
 ```jsonc
-"moai-cafe24": {
+"gil-mcp-cafe24": {
   "command": "uv",
   "args": ["run", "--directory", "./mcp-servers/gil-mcp-cafe24", "gil-mcp-cafe24"],
   "env": {
@@ -148,7 +175,7 @@ Analytics API는 별도 Token Bucket(IP/URL 기반).
 ## 검증
 
 ```bash
-cd mcp-servers/gil-mcp-cafe24
+cd <플러그인 루트>/mcp-servers/gil-mcp-cafe24
 uv run python -c "import gil_mcp_cafe24.server as s; print('tools:', s._TOOLS_REGISTERED)"
 # tools: 526
 ```
@@ -166,6 +193,3 @@ uv run python -c "import gil_mcp_cafe24.server as s; print('tools:', s._TOOLS_RE
 ## 라이선스
 
 Apache-2.0 (모두의 코워크 플러그인의 일부).
-
----
-Origin: modu-ai/moai-cowork@f1eb954 (Apache-2.0). Rebranded moai-mcp-* -> gil-mcp-* for GIL v2.0.0 (2026-08-11). Runtime dir ~/.moai -> ~/.gil.

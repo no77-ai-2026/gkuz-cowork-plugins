@@ -2,8 +2,7 @@
 name: escalation-manager
 description: |
   고객 불만 에스컬레이션을 처리하고 VOC를 분석합니다 트리거: "불만 고객 대응 전략 세워줘", "VIP 고객 특별 응대 방법 알려줘", "주간 CS 요약 보고서 만들어줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -120,7 +119,7 @@ Zendesk·Medallia 2026 CX 연구 반영:
 서술형 산출물(에스컬레이션 대응 계획서, VIP 응대 스크립트, 개선 권고안, VOC 인사이트 서술)은 다음 체인으로 마무리합니다:
 
 ```
-escalation-manager → gil:ai-slop-reviewer → gil:humanize-korean
+escalation-manager → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — AI 티 나는 표현·과잉 수식·기계적 문장 패턴을 검수·수정

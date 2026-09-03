@@ -22,7 +22,7 @@ effort: xhigh
 
 ## 워크플로우
 
-**B. 정부지원사업 분기 (구 grant-coordinator)**: `gil:sbiz365-analyst`(현황·자격 진단) → `gil:kr-gov-grant`(지원사업 매칭·신청서 초안, 필요 시 WebSearch 공고 확인) → `gil:consulting-brief`(신청 전략) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+**B. 정부지원사업 분기 (구 grant-coordinator)**: `gil:sbiz365-analyst`(현황·자격 진단) → `gil:kr-gov-grant`(지원사업 매칭·신청서 초안, 필요 시 WebSearch 공고 확인) → `gil:consulting-brief`(신청 전략) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 
 **A. 사업계획·IR 기본 흐름**
 
@@ -30,7 +30,7 @@ effort: xhigh
 2. `gil:market-analyst` — 시장 규모·경쟁·기회 분석 (필요 시 WebSearch로 최신 시장 자료 보강)
 3. `gil:investor-relations` — 투자 포인트·IR 메시지 구성
 4. (`gil:startup-launchpad` — 초기 스타트업이면 런치 로드맵 보강)
-5. (계획서 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+5. (계획서 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 6. `gil:pptx-designer` — IR/사업계획 발표자료로 변환
 
 ## Cowork 환경 제약

@@ -5,7 +5,7 @@ description: >
   '출시 전 법적 점검해줘', '앱 출시 체크리스트 만들어줘', '서비스 런칭 전 검토해줘',
   '인공지능기본법 지키는지 봐줘', '과태료 항목 체크해줘'라고 요청하세요.
   2026년 기준 인공지능기본법·개인정보·정보통신망·전자상거래 등 출시 go/no-go 게이트를 제공합니다.
-version: "2.2.0"
+version: "2.3.1"
 origin: moai-cowork@f1eb954
 ---
 
@@ -129,7 +129,7 @@ origin: moai-cowork@f1eb954
 출시 판정서·체크리스트 보고서 등 서술형 산출물은 작성 후 반드시 다음 체인으로 마무리합니다.
 
 ```
-service-launch-checklist → gil:ai-slop-reviewer → gil:humanize-korean
+service-launch-checklist → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - **gil:ai-slop-reviewer**: AI 글쓰기 패턴(과장·상투구·획일적 구조) 검수

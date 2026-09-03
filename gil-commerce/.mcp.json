@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "gil-mcp-smartstore": {
-      "$comment": "네이버 커머스(스마트스토어) 전 도메인 운영/관리 MCP — 상품·주문·정산·문의·물류/N배송·판매자정보·커머스솔루션·통계 9 영역 90 도구. OAuth2 Client Credentials + bcrypt 전자서명. 401 자동 재발급. 사전 설치: uv. 소스 자체 vendor(mcp-servers/gil-mcp-smartstore) — PyPI 불필요. 자격증명 절차: mcp-servers/gil-mcp-smartstore/CONNECTORS.md. 통계(stats_*)는 API데이터솔루션 별도 사용신청 선행. 라이브 스킬: gil-commerce:marketplace-naver. Origin: modu-ai/moai-cowork@f1eb954 (Apache-2.0).",
+      "$comment": "네이버 커머스(스마트스토어) 전 도메인 운영/관리 MCP — 상품·주문·정산·문의·물류/N배송·판매자정보·커머스솔루션·통계 9 영역 90 도구. OAuth2 Client Credentials + bcrypt 전자서명. 401 자동 재발급. 사전 설치: uv. 소스 자체 vendor(mcp-servers/gil-mcp-smartstore) — PyPI 불필요. 자격증명 절차: mcp-servers/gil-mcp-smartstore/CONNECTORS.md. 통계(stats_*)는 API데이터솔루션 별도 사용신청 선행. 라이브 스킬: gil-commerce:marketplace-naver. Origin: modu-ai/moai-cowork@f1eb954 (Apache-2.0). [2026-09-03 v2.3.1] 자격증명은 ${user_config.KEY}(플러그인 설치 시 입력 폼·키체인) → 환경변수 → ~/.gil/mcp/<서비스>.json 순으로 해석(gil_mcp_core.CredentialStore). 확장 안 된 ${...}·빈 문자열은 값 없음으로 판정.",
       "command": "uv",
       "args": [
         "run",
@@ -10,14 +10,14 @@
         "gil-mcp-smartstore"
       ],
       "env": {
-        "NAVER_COMMERCE_CLIENT_ID": "${NAVER_COMMERCE_CLIENT_ID}",
-        "NAVER_COMMERCE_CLIENT_SECRET": "${NAVER_COMMERCE_CLIENT_SECRET}",
-        "NAVER_COMMERCE_ACCOUNT_ID": "${NAVER_COMMERCE_ACCOUNT_ID}",
-        "NAVER_COMMERCE_TYPE": "${NAVER_COMMERCE_TYPE}"
+        "NAVER_COMMERCE_CLIENT_ID": "${user_config.NAVER_COMMERCE_CLIENT_ID}",
+        "NAVER_COMMERCE_CLIENT_SECRET": "${user_config.NAVER_COMMERCE_CLIENT_SECRET}",
+        "NAVER_COMMERCE_ACCOUNT_ID": "${user_config.NAVER_COMMERCE_ACCOUNT_ID}",
+        "NAVER_COMMERCE_TYPE": "${user_config.NAVER_COMMERCE_TYPE}"
       }
     },
     "gil-mcp-imweb": {
-      "$comment": "아임웹(Imweb) OPEN API v3 MCP — 136 엔드포인트를 8 카테고리 도구로(order·product·member·community·promotion·site·script·payment). OAuth2 + JWT 자동 갱신. 사전 설치: uv. 소스 자체 vendor. 자격증명 절차: mcp-servers/gil-mcp-imweb/CONNECTORS.md. 라이브 스킬: gil-commerce:marketplace-d2c. Origin: modu-ai/moai-cowork@f1eb954 (Apache-2.0).",
+      "$comment": "아임웹(Imweb) OPEN API v3 MCP — 136 엔드포인트를 8 카테고리 도구로(order·product·member·community·promotion·site·script·payment). OAuth2 + JWT 자동 갱신. 사전 설치: uv. 소스 자체 vendor. 자격증명 절차: mcp-servers/gil-mcp-imweb/CONNECTORS.md. 라이브 스킬: gil-commerce:marketplace-d2c. Origin: modu-ai/moai-cowork@f1eb954 (Apache-2.0). [2026-09-03 v2.3.1] 자격증명은 ${user_config.KEY}(플러그인 설치 시 입력 폼·키체인) → 환경변수 → ~/.gil/mcp/<서비스>.json 순으로 해석(gil_mcp_core.CredentialStore). 확장 안 된 ${...}·빈 문자열은 값 없음으로 판정.",
       "command": "uv",
       "args": [
         "run",
@@ -26,15 +26,15 @@
         "gil-mcp-imweb"
       ],
       "env": {
-        "IMWEB_CLIENT_ID": "${IMWEB_CLIENT_ID}",
-        "IMWEB_CLIENT_SECRET": "${IMWEB_CLIENT_SECRET}",
-        "IMWEB_ACCESS_TOKEN": "${IMWEB_ACCESS_TOKEN}",
-        "IMWEB_REFRESH_TOKEN": "${IMWEB_REFRESH_TOKEN}",
-        "IMWEB_UNIT_CODE": "${IMWEB_UNIT_CODE}"
+        "IMWEB_CLIENT_ID": "${user_config.IMWEB_CLIENT_ID}",
+        "IMWEB_CLIENT_SECRET": "${user_config.IMWEB_CLIENT_SECRET}",
+        "IMWEB_ACCESS_TOKEN": "${user_config.IMWEB_ACCESS_TOKEN}",
+        "IMWEB_REFRESH_TOKEN": "${user_config.IMWEB_REFRESH_TOKEN}",
+        "IMWEB_UNIT_CODE": "${user_config.IMWEB_UNIT_CODE}"
       }
     },
     "gil-mcp-cafe24": {
-      "$comment": "카페24(Cafe24) 쇼핑몰 API MCP — Admin API(19 도메인) + Analytics API 전 엔드포인트, 선언적 레지스트리 기반. OAuth2 access(2h)/refresh(2w) 자동 갱신, 이중 레이트리밋 준수. 사전 설치: uv. 소스 자체 vendor. 자격증명 절차: mcp-servers/gil-mcp-cafe24/README.md. 라이브 스킬: gil-commerce:marketplace-d2c. Origin: modu-ai/moai-cowork@f1eb954 (Apache-2.0).",
+      "$comment": "카페24(Cafe24) 쇼핑몰 API MCP — Admin API(19 도메인) + Analytics API 전 엔드포인트, 선언적 레지스트리 기반. OAuth2 access(2h)/refresh(2w) 자동 갱신, 이중 레이트리밋 준수. 사전 설치: uv. 소스 자체 vendor. 자격증명 절차: mcp-servers/gil-mcp-cafe24/README.md. 라이브 스킬: gil-commerce:marketplace-d2c. Origin: modu-ai/moai-cowork@f1eb954 (Apache-2.0). [2026-09-03 v2.3.1] 자격증명은 ${user_config.KEY}(플러그인 설치 시 입력 폼·키체인) → 환경변수 → ~/.gil/mcp/<서비스>.json 순으로 해석(gil_mcp_core.CredentialStore). 확장 안 된 ${...}·빈 문자열은 값 없음으로 판정.",
       "command": "uv",
       "args": [
         "run",
@@ -43,11 +43,11 @@
         "gil-mcp-cafe24"
       ],
       "env": {
-        "CAFE24_MALL_ID": "${CAFE24_MALL_ID}",
-        "CAFE24_CLIENT_ID": "${CAFE24_CLIENT_ID}",
-        "CAFE24_CLIENT_SECRET": "${CAFE24_CLIENT_SECRET}",
-        "CAFE24_ACCESS_TOKEN": "${CAFE24_ACCESS_TOKEN}",
-        "CAFE24_REFRESH_TOKEN": "${CAFE24_REFRESH_TOKEN}"
+        "CAFE24_MALL_ID": "${user_config.CAFE24_MALL_ID}",
+        "CAFE24_CLIENT_ID": "${user_config.CAFE24_CLIENT_ID}",
+        "CAFE24_CLIENT_SECRET": "${user_config.CAFE24_CLIENT_SECRET}",
+        "CAFE24_ACCESS_TOKEN": "${user_config.CAFE24_ACCESS_TOKEN}",
+        "CAFE24_REFRESH_TOKEN": "${user_config.CAFE24_REFRESH_TOKEN}"
       }
     }
   },

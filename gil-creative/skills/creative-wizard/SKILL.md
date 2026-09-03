@@ -9,8 +9,7 @@ description: |
   - "브리프 받아서 멀티 포맷으로 만들어줘"
   - "reklama kreativ sehrgari" (광고 크리에이티브 마법사, UZ)
   텍스트 지능(카피·구성·현지화·후기분석)은 Claude가 직접 수행하고, 이미지 생성만 gil-creative:image-bridge(OpenAI/Gemini BYOK)로 붙입니다. 설계는 gil-creative:creative-architect, 현지화는 gil-creative:market-profile-engine, 자료는 gil-creative:material-analyzer로 위임합니다.
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 
 # 크리에이티브 마법사 (Creative Wizard) — 코디네이터
@@ -112,7 +111,7 @@ creative-wizard(코디네이터)
 │    └─ 승인 게이트(히어로)
 ├─ image-bridge (OpenAI/Gemini BYOK) ◄ gpt-image-2-prompt / gemini-3-image-prompt
 ├─ 포맷 빌더: detail-page-* / card-news / poster-ad-builder / print-creative-builder
-└─ QA: ai-slop-reviewer → humanize-korean → korean-spell-check → commerce-marketing-compliance-kr
+└─ QA: ai-slop-reviewer → korean-spell-check(민감도 public 시) → humanize-korean(Phase 6 최종 검수) → commerce-marketing-compliance-kr
 ```
 
 ---

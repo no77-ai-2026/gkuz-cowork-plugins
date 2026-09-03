@@ -6,9 +6,9 @@ description: |
   microcopy, taglines, value propositions, marketing-landing-page and footer copy,
   with anti-AI-slop rules and concrete-number enforcement.
 user-invocable: false
-version: "2.1.0"
+version: "2.2.1"
 uz: n/a
-origin: moai-cowork@f1eb954
+origin: moai-cowork@61fac40 (v1.2.4, 2026-09-02 동기화)
 ---
 
 > ⚠️ **개발 런타임 전용** — 이 스킬은 MoAI-ADK(Claude Code) 환경을 전제한다. Claude Cowork(Desktop)에서는 `.moai/config` 의존으로 동작하지 않을 수 있다. Desktop 사용자는 `gil-creative:copywriting`을 사용한다.
@@ -29,7 +29,7 @@ Before generating copy, verify all three conditions are met:
 2. Target page or section scope is explicitly stated (landing page, about, pricing, etc.).
 3. Anti-AI-slop checklist is active (see below).
 
-If `brand-voice.md` does not exist, stop and instruct the user to run the brand interview via `/design` (Path B brand-interview).
+If `brand-voice.md` does not exist, stop and instruct the user to run the brand interview via `gil-creative:design-brand-system` (Path B 브랜드 인터뷰).
 
 ### Output Format
 
@@ -261,6 +261,7 @@ dependency.
 |---|---|---|
 | Post-검수 | `gil:ai-slop-reviewer` | AI 슬롭 검수 (필수) |
 | Post-검수 | `gil:humanize-korean` | 한국어 AI 티 제거 (슬롭 검수 다음, 필수) |
+| Post-검수 | 최종 검수 (`gil:humanize-korean` Phase 6) | 원문↔윤문본 직접 대조 — 의미 보존·과윤문 역방향 (◆최종본 필수, 생략 불가) |
 
 ---
 

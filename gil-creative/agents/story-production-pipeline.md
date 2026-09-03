@@ -26,7 +26,7 @@ effort: high
 4. (매체 분기) 웹툰: `gil-creative:story-conti` · 영상: `gil-creative:story-screenplay` + `gil-creative:story-previz` · 광고: `gil-creative:story-ad-conti`
 5. (비주얼) `gil-creative:story-cover-art` — 표지·키비주얼
 6. (사업화) `gil-creative:story-ip-pitch` — IP 피칭 자료
-7. (텍스트 산출물) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+7. (텍스트 산출물) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 
 ## Cowork 환경 제약
 

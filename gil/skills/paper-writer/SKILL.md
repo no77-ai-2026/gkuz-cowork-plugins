@@ -2,8 +2,7 @@
 name: paper-writer
 description: |
   서론-선행연구-방법론-결과-논의-결론 구조의 학술 논문 초안을 쓰고 APA·KCI·IEEE 참고문헌을 자동 생성해 드립니다 트리거: "딥러닝 이미지 분류 논문 써줘. APA 7th 포맷으로", "초록 작성해줘. 주제는 트랜스포머 감성 분석이야", "참고문헌 KCI 포맷으로 정리해줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -136,7 +135,7 @@ AskUserQuestion으로 다음 정보를 수집합니다:
 
 논문 초안 등 서술형 텍스트를 작성한 뒤에는 다음 체인으로 마무리합니다:
 
-`paper-writer → gil:ai-slop-reviewer → gil:humanize-korean`
+`paper-writer → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 - **gil:ai-slop-reviewer** - 작성된 논문 AI 패턴 검수 및 후처리
 - **gil:humanize-korean** - 한국어 문장 자연화(AI 티 제거, 의미 보존)

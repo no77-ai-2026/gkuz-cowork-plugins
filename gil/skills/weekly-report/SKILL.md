@@ -2,8 +2,7 @@
 name: weekly-report
 description: |
   한국 팀의 주간 비즈니스 리뷰(WBR) 보고서 자동 생성 스킬입니다 트리거: "주간보고 작성", "WBR 준비", "이번 주 한 일 정리"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -281,7 +280,7 @@ MCP 가용 시 자동 우선 활용. 사용자가 명시적으로 텍스트 입�
 ## 관련 커맨드
 
 - 등록된 스킬 체인:
-  - 주간보고 본문 후처리(표준): `weekly-report → gil:ai-slop-reviewer → gil:humanize-korean`
+  - 주간보고 본문 후처리(표준): `weekly-report → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
   - 주간보고 → 임원 1pager: `weekly-report → gil:ai-slop-reviewer → gil:humanize-korean → gil:executive-summary`
   - 발표 슬라이드: `weekly-report → gil:ai-slop-reviewer → gil:humanize-korean → gil:pptx-designer`
 

@@ -2,8 +2,7 @@
 name: grant-writer
 description: |
   한국연구재단(NRF)·IITP·KIAT·중소벤처기업부 양식에 맞춘 정부 연구비 신청서 초안을 만들어 드립니다 트리거: "기초연구과제 신청서 써줘. 주제는 딥러닝 의료 영상 진단이야", "NRF 중견연구 제안서 작성해줘. 3년 프로젝트야", "IITP ICT R&D 사업계획서 초안 만들어줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -124,7 +123,7 @@ AskUserQuestion으로 지원 기관과 사업 유형을 선택받습니다:
 
 연구비 신청서 본문 등 서술형 텍스트를 작성한 뒤에는 다음 체인으로 마무리합니다:
 
-`grant-writer → gil:ai-slop-reviewer → gil:humanize-korean`
+`grant-writer → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 - **gil:ai-slop-reviewer** - 작성된 신청서 AI 패턴 검수 및 후처리
 - **gil:humanize-korean** - 한국어 문장 자연화(AI 티 제거, 의미 보존)

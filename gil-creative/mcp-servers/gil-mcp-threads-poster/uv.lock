@@ -338,7 +338,7 @@ wheels = [
 ]
 
 [[package]]
-name = "gil-mcp-threads-poster"
+name = "moai-mcp-threads-poster"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

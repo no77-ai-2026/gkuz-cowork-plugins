@@ -2,8 +2,7 @@
 name: performance-report
 description: |
   GA4·네이버·메타·카카오·구글 광고 데이터를 묶어 채널별 ROAS·KPI를 분석하고, 인사이트와 다음 액션 플랜까지 담은 마케팅 성과 보고서를 만들어 드립니다 트리거: "지난달 마케팅 성과 보고서 만들어줘", "ROAS 분석해줘", "GA4 데이터 해석해줘"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -224,7 +223,7 @@ ROAS 단일 지표만 보지 말고 **누적 이익 = LTV × 재구매**까지 �
 
 경영진 요약·핵심 발견·인사이트·다음 액션 플랜 등 **서술형(prose) 산출물**은 발행 전 후처리 체인을 거칩니다. 채널별 성과표·ROAS/LTV·CAC·NSM 표 등 **수치·표 산출물은 대상이 아니며**, 시각화가 필요하면 `gil:xlsx-creator` 또는 `gil:data-visualizer`로 라우팅합니다.
 
-**권장 체인(서술 부분)**: `performance-report(서술) → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인(서술 부분)**: `performance-report(서술) → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

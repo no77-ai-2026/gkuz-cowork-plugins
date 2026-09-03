@@ -2,8 +2,7 @@
 name: roadmap-manager
 description: |
   프로젝트 로드맵·마일스톤 계획과 전략적 제휴(MOU) 초안, ESG 지속가능성 감사·DEI 전략 문서를 만들어 드립니다 트리거: "로드맵 정리해줘", "마일스톤 계획 세워줘", "MOU 초안 작성해줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -96,7 +95,7 @@ version: "2.2.0"
 
 MOU 초안·지속가능성 감사 보고서·DEI 전략 문서 같은 서술형 결과물을 완성한 뒤에는 다음 체인으로 마무리합니다(로드맵 일정표·RACI 매트릭스 같은 표·데이터는 제외, 본문 서술 부분에만 적용):
 
-`gil:roadmap-manager → gil:ai-slop-reviewer → gil:humanize-korean`
+`gil:roadmap-manager → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 - `gil:ai-slop-reviewer`: AI 특유의 상투적 표현·과장·군더더기를 점검하고 다듬습니다.
 - `gil:humanize-korean`: 자연스러운 한국어 문장으로 최종 정제합니다.

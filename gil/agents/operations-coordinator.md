@@ -22,7 +22,7 @@ effort: medium
 
 ## 워크플로우
 
-**B. 회의·보고 분기 (구 meeting-report)**: `gil:meeting-facilitator`(회의 진행·정리) → `gil:report-speak`(보고 화법 변환) → `gil:feedback-loop`(피드백·후속) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+**B. 회의·보고 분기 (구 meeting-report)**: `gil:meeting-facilitator`(회의 진행·정리) → `gil:report-speak`(보고 화법 변환) → `gil:feedback-loop`(피드백·후속) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 
 **A. 운영 기본 흐름**
 

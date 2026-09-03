@@ -2,8 +2,7 @@
 name: wellness-coach
 description: |
   운동·식단·건강·육아·시니어 케어를 종합적으로 코칭합니다 트리거: "운동 루틴 만들어줘", "다이어트 식단 짜줘", "아이 발달 단계 알려줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -97,7 +96,7 @@ version: "2.2.0"
 이 스킬은 운동 코칭 계획·육아 활동 안내·시니어 케어 계획·건강 가이드 같은 **글(텍스트) 산출물**을 만듭니다. 글 산출물은 발행 전 다음 체인으로 후처리하세요.
 
 ```
-wellness-coach → gil:ai-slop-reviewer → gil:humanize-korean
+wellness-coach → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - **gil:ai-slop-reviewer**: AI 티 나는 표현·과장 어조를 검수하고 다듬습니다

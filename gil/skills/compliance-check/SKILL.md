@@ -2,8 +2,7 @@
 name: compliance-check
 description: |
   규제 준수 점검, 내부 감사, ESG 보고, 인허가 서류를 지원합니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -158,7 +157,7 @@ version: "2.2.0"
 감사 보고서·갭 분석·ESG 보고서 등 서술형 산출물은 작성 후 반드시 다음 체인으로 마무리합니다.
 
 ```
-compliance-check → gil:ai-slop-reviewer → gil:humanize-korean
+compliance-check → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - **gil:ai-slop-reviewer**: AI 글쓰기 패턴(과장·상투구·획일적 구조) 검수

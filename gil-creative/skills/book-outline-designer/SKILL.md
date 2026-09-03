@@ -2,8 +2,7 @@
 name: book-outline-designer
 description: |
   [한·UZ 듀얼] 도서 목차 설계 트리거: "책 목차 설계", "도서 목차", "장·꼭지 구성"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 

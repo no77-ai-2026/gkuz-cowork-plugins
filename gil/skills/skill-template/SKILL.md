@@ -2,7 +2,7 @@
 name: skill-template
 description: |
   SKILL.md 표준 템플릿 트리거: "새 스킬 만들고 싶어", "스킬 템플릿", "SKILL.md 템플릿"
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -29,14 +29,16 @@ description: |                              # 필수. 목적 + 트리거 키워�
   다음과 같은 요청 시 반드시 이 스킬을 사용하세요:
   - "<트리거 문장 1>"
   - "<트리거 문장 2>"
-user-invocable: true                        # 선택. 기본값 true. 탭 자동완성 표시 여부
 ---
 ```
+
+> ⚠️ `user-invocable: true`를 **쓰지 않는다** (2026-09-02, 모태 v1.2.2 실측). Cowork 앱은 `user-invocable: true` 스킬을 "스킬"이 아니라 "커맨드"로 분류해 플러그인 화면의 스킬 수에서 뺀다. 자동완성 노출이 필요하면 description 트리거로 충분하다. 숨김이 필요한 내부 참조 스킬(core·spec 등)만 `user-invocable: false`를 쓴다.
 
 ### 금지 필드 (v1.3.0 정책)
 
 - `metadata:` 블록 (version, status, updated, tags)
 - `keywords:` (비표준)
+- `user-invocable: true` (앱이 커맨드로 분류 — 위 경고 참조)
 - 본문 상단 `> vX.Y.Z | ...` 버전 배너
 
 ---

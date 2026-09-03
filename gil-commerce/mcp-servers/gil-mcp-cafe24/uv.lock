@@ -369,7 +369,7 @@ wheels = [
 ]
 
 [[package]]
-name = "gil-mcp-cafe24"
+name = "moai-mcp-cafe24"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

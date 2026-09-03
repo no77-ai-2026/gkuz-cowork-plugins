@@ -2,8 +2,7 @@
 name: ux-researcher
 description: |
   사용자 인터뷰 가이드·페르소나 문서·VOC 분석 보고서·NPS 해석안 같은 UX 리서치 결과물을 만들어 드립니다 트리거: "사용자 인터뷰 질문지 만들어줘", "VOC 분석해줘", "페르소나 설계해줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -103,7 +102,7 @@ UX, UX 리서치, 사용자 인터뷰, 유저빌리티, 페르소나, VOC, NPS, 
 
 VOC 분석 보고서·페르소나 문서·인터뷰 가이드·NPS 개선 제안 같은 서술형 결과물을 완성한 뒤에는 다음 체인으로 마무리합니다(설문 응답 표·정량 수치는 제외, 본문 서술 부분에만 적용):
 
-`gil:ux-researcher → gil:ai-slop-reviewer → gil:humanize-korean`
+`gil:ux-researcher → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 - `gil:ai-slop-reviewer`: AI 특유의 상투적 표현·과장·군더더기를 점검하고 다듬습니다.
 - `gil:humanize-korean`: 자연스러운 한국어 문장으로 최종 정제합니다.

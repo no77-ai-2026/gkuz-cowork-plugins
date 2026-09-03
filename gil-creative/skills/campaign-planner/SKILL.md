@@ -2,8 +2,7 @@
 name: campaign-planner
 description: |
   광고·SNS·이메일을 묶은 마케팅 캠페인 기획안(목표·채널·예산·KPI·크리에이티브 방향)을 만들어 드립니다 트리거: "신제품 런칭 캠페인 기획해줘, 예산 500만원에 2030 여성 타깃", "A/B 테스트 설계해줘", "인플루언서 마케팅 전략 짜줘, 마이크로 위주로"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -82,7 +81,7 @@ version: "2.1.0"
 
 캠페인 전략 문서·인플루언서 협찬 제안서·고객 여정 맵 설명·CRM 전략 등 **서술형(prose) 산출물**은 발행 전 후처리 체인을 거칩니다. A/B 테스트 설계표·예산 배분표·매트릭스 등 **수치·표 산출물은 대상이 아닙니다**.
 
-**권장 체인(서술 부분)**: `campaign-planner(서술) → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인(서술 부분)**: `campaign-planner(서술) → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

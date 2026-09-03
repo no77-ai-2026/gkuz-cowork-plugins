@@ -2,8 +2,7 @@
 name: performance-review
 description: |
   성과평가 체계를 설계하고 실행을 도와주는 스킬입니다 트리거: "OKR 설정해줘", "성과 리뷰 템플릿 만들어줘", "피드백 면담 스크립트 써줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -157,7 +156,7 @@ version: "2.2.0"
 **텍스트 후처리 체인 (면담 스크립트·평가 보고서 서술 부분 등 산문 산출물)**:
 
 ```
-performance-review → gil:ai-slop-reviewer → gil:humanize-korean
+performance-review → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — AI 티 패턴(기계적 어투, 상투적 피드백 표현) 검수·수정

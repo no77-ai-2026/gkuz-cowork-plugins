@@ -2,8 +2,7 @@
 name: spec-writer
 description: |
   제품 기획 문서(PRD·기능 명세서)와 AI 도입 전략 보고서를 만들어 드립니다 트리거: "PRD 작성해줘", "기능 명세서 만들어줘", "AI 도입 전략 보고서 써줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -103,7 +102,7 @@ PRD, 기능명세, 스펙, 제품 기획, AI 전략, 디지털전환, 프로덕�
 
 PRD·AI 전략 보고서 같은 서술형 문서를 완성한 뒤에는 다음 체인으로 마무리합니다(표·수치 데이터는 제외, 본문 서술 부분에만 적용):
 
-`gil:spec-writer → gil:ai-slop-reviewer → gil:humanize-korean`
+`gil:spec-writer → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 - `gil:ai-slop-reviewer`: AI 특유의 상투적 표현·과장·군더더기를 점검하고 다듬습니다.
 - `gil:humanize-korean`: 자연스러운 한국어 문장으로 최종 정제합니다.

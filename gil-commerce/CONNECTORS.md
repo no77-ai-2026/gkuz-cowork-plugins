@@ -1,5 +1,11 @@
 # GIL 통합 커넥터 안내 (MCP/API)
 
+> **[v2.3.1 HARD] 자격증명 주입 방식 (2026-09-03)** — `.mcp.json`의 `"env": {"KEY": "${KEY}"}` 참조는 **Claude 데스크톱 앱에서 확장되지 않습니다**(모태 실측: 서버는 정상 기동·도구 목록도 뜨지만 문자열 `${KEY}`가 그대로 전달돼 모든 호출이 401). 아래 각 절의 "환경변수 설정"은 **Claude Code CLI(셸 export)에서만** 유효합니다. Cowork 데스크톱에서는 다음 둘 중 하나를 쓰세요.
+> 1. **플러그인 설치 시 입력 폼** — 각 번들 `plugin.json`의 `userConfig`에 선언된 키(gil: `DART_API_KEY`·`KOREAN_LAW_OC` / gil-creative: `THREADS_*`·`IG_*`·`ELEVENLABS_API_KEY` / gil-commerce: `NAVER_COMMERCE_*`·`IMWEB_*`·`CAFE24_*`). Claude 앱이 키체인에 보관하고 `.mcp.json`은 `${user_config.KEY}`로 참조합니다. 플러그인 설정 화면에서 언제든 수정 가능.
+> 2. **자격증명 파일** `~/.gil/mcp/<서비스>.json` (Windows `C:\Users\<사용자>\.gil\mcp\`) — 서비스 슬러그: `smartstore`·`imweb`·`cafe24`·`threads_poster`·`dart`·`elevenlabs`. 자체 서버 4종은 `gil_mcp_core.CredentialStore`가, 제3자 서버(dart·ElevenLabs)는 `mcp-launch/mcp_launch.py` 런처가 이 파일을 읽어 실제 값을 채운 뒤 서버를 실행합니다. korean-law만 키가 URL에 들어가 1번 경로만 지원.
+> 확장되지 않은 `${...}`와 빈 문자열은 "값 없음"으로 판정되어 다음 경로로 넘어갑니다.
+
+
 
 ---
 # [gil-business] 커넥터 안내
@@ -960,7 +966,7 @@ GIL 플러그인은 Cowork 공식 커넥터와 연동하여 외부 도구와 직
 |--------|------|------|
 | **WordPress** | 블로그 포스트 직접 발행, 기존 글 수정 | 공식 커넥터 |
 | **Canva** | 카드뉴스, SNS 이미지, 프레젠테이션 디자인 | 공식 커넥터 |
-| post-bridge | 다중 플랫폼 동시 발행 (네이버, 티스토리) | 커스텀 MCP |
+| ~~post-bridge~~ | (2026-09-02 제거) 공식 호스팅 MCP 부재 — 다중 발행은 typefully·wordpress 커넥터 사용 | — |
 | typefully | 트위터/X 스레드 예약 발행 | 커스텀 MCP |
 
 ### gil-marketing (마케팅)

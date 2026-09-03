@@ -6,7 +6,7 @@ description: |
   spacing systems, hero-first layout, component specs, design tokens,
   visual identity, and WCAG 2.1 AA accessibility enforcement.
 user-invocable: false
-version: "2.1.0"
+version: "2.2.1"
 origin: moai-cowork@f1eb954
 ---
 

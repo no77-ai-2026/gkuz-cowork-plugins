@@ -7,9 +7,9 @@ description: |
   from .moai/design/, DTCG token validation, and brand-context
   constitutional priority.
 user-invocable: false
-version: "2.1.0"
+version: "2.2.1"
 uz: n/a
-origin: moai-cowork@f1eb954
+origin: moai-cowork@61fac40 (v1.2.4, 2026-09-02 동기화)
 ---
 
 > ⚠️ **개발 런타임 전용** — 이 스킬은 MoAI-ADK(Claude Code) 환경을 전제한다. Claude Cowork(Desktop)에서는 `.moai/config` 의존으로 동작하지 않을 수 있다. Desktop 사용자는 `design-*` 체인(design-brief → design-prompt-builder → design-slop-check)을 사용한다.
@@ -157,6 +157,17 @@ Log `design_docs not configured — using defaults` when key absent.
 **Fallback guidance** appended to every error: instruct user to run `/moai design` and
 select "Code-based brand design (design-brand-system)" after ensuring
 `.moai/project/brand/visual-identity.md` is complete.
+
+### Part 4 — 번들 없이 브랜드에서 바로 시작하는 경로
+
+핸드오프 번들도 Figma도 없이 **브랜드 자산에서 곧장 디자인을 만드는** 요청이면 아래 순서로 진행합니다.
+`design.yaml`(`.gil/config/sections/design.yaml`) 값을 따르고 임계값을 코드에 박지 않습니다.
+
+1. `gil-creative:design-system-prep` + `gil-creative:design-brand-system` — 브랜드 자산 → DESIGN.md + DTCG 토큰 (WCAG 2.1 AA)
+2. `gil-creative:design-copywriting` — 브랜드 톤에 맞춘 카피 (생성 시점부터 AI 슬롭 회피)
+3. `gil-creative:design-iteration-loop` — Builder-Evaluator 품질 루프 (최대 5회, pass_threshold 0.75, 4차원 채점)
+
+UX 프롬프트 패턴이 필요하면 `gil-creative:design-prompt-builder`를 함께 씁니다. (구 `/design` 슬래시 커맨드의 브랜드 기반 체인 순서를 이 절로 이관 — 자연어 요청 "브랜드 자산으로 디자인 만들어줘"가 진입점)
 
 ### Partial Bundle Recovery
 

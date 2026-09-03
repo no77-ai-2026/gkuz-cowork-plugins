@@ -2,8 +2,7 @@
 name: patent-analyzer
 description: |
   특허 동향 보고서·선행기술 조사 보고서·FTO(침해 가능성) 분석·특허 출원서 초안을 만들어 드립니다 트리거: "배터리 기술 특허 동향 분석해줘. 최근 10년 기준으로", "이 발명의 선행기술 조사해줘. 핵심 구성요소는 A, B, C야", "FTO 분석 해줘. 대상 기술은 AI 이상 탐지야"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -199,7 +198,7 @@ AskUserQuestion으로 분석 목적을 선택받습니다:
 
 선행기술 조사 보고서·FTO 분석 보고서·특허 출원서 초안 등 서술형 텍스트를 작성한 뒤에는 다음 체인으로 마무리합니다:
 
-`patent-analyzer → gil:ai-slop-reviewer → gil:humanize-korean`
+`patent-analyzer → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 - **gil:ai-slop-reviewer** - 작성된 보고서·출원서 AI 패턴 검수 및 후처리
 - **gil:humanize-korean** - 한국어 문장 자연화(AI 티 제거, 의미 보존)

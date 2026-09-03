@@ -2,7 +2,7 @@
 name: building-ledger-search
 description: |
   국토교통부 건축HUB 건축물대장·건축인허가·주택인허가 실측 데이터로 한 필지의 용도지역·주용도·구조·규모·건폐율/용적률·세대/주차·사용승인일·내진·공시가격 시계열·노후도·철거멸실(석면)·인허가 파이프라인을 조회해 드립니다. archhub MCP의 11개 도구를 호출하므로 별도 설치·API 키가 필요 없습니다(공용키 … 트리거: "자양동 2-2번지 건물 정보 한눈에", "이 필지 용도지역·건폐율·용적률 보여줘", "자양동 건축물 통계 내줘"
-version: "2.2.0"
+version: "2.3.1"
 uz: n/a
 origin: moai-cowork@f1eb954
 ---
@@ -124,7 +124,7 @@ origin: moai-cowork@f1eb954
 
 사용자 측 필수 시크릿 **없음**. API 키 발급 불필요.
 
-- archhub MCP는 공용키가 탑재된 remote 커넥터(`https://archhub-mcp.fly.dev/mcp`)로, URL만 `.mcp.json`에 등록하면 바로 사용합니다.
+- archhub MCP는 공용키가 탑재된 remote 커넥터(`https://mcp.gomdori.app/archhub`)로, URL만 `.mcp.json`에 등록하면 바로 사용합니다.
 - 인터넷 연결만 있으면 동작합니다.
 - 로컬 실행(stdio)이 필요한 경우에만 `ARCHHUB_SERVICE_KEY`(data.go.kr 건축HUB 서비스 Decoding 인증키)가 필요합니다. 일반적인 사용은 remote 커넥터로 충분합니다.
 

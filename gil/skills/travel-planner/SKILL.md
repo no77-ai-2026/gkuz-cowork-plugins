@@ -2,8 +2,7 @@
 name: travel-planner
 description: |
   여행 일정·맛집·숙소·예산을 한 번에 설계해주는 여행 플래너입니다 트리거: "제주 3박 4일 일정 짜줘", "도쿄 5박 6일 여행 코스와 예산 계획 세워줘", "강릉 주말 여행 맛집·카페 추천해줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -95,7 +94,7 @@ version: "2.2.0"
 이 스킬은 여행 일정 설명 같은 **글(텍스트) 산출물**을 만듭니다. 글 산출물은 발행 전 다음 체인으로 후처리하세요.
 
 ```
-travel-planner → gil:ai-slop-reviewer → gil:humanize-korean
+travel-planner → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - **gil:ai-slop-reviewer**: AI 티 나는 표현·과장 어조를 검수하고 다듬습니다

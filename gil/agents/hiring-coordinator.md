@@ -24,7 +24,7 @@ effort: medium
 2. `gil:draft-offer` — 오퍼레터 작성
 3. `gil:employment-manager` — 근로계약·온보딩 관리
 4. `gil:people-operations` — 인사운영 / `gil:performance-review` 성과평가
-5. (대외 문서 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+5. (대외 문서 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 
 ## Cowork 환경 제약
 

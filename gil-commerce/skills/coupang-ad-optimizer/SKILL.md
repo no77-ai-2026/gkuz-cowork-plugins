@@ -2,8 +2,7 @@
 name: coupang-ad-optimizer
 description: |
   이 스킬은 gil-commerce:marketplace-coupang-ads로 이름이 변경되었습니다 트리거: "쿠팡 광고 분석해줘", "쿠팡 AI스마트광고 세팅", "쿠팡 캠페인 분리"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 

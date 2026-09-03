@@ -26,7 +26,7 @@ effort: high
 4. `gil-commerce:commerce-product-naming` — 상품/브랜드 네이밍
 5. `gil-commerce:commerce-promotion-planner` — 프로모션 설계
 6. `gil-commerce:commerce-channel-message` — 채널별 메시지
-7. (카피·메시지 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+7. (카피·메시지 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 
 ## 관련 보조 스킬 (상황에 따라 배치)
 

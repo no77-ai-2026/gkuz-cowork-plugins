@@ -2,8 +2,7 @@
 name: interview-coach
 description: |
   한국 취준생·재직 이직자를 위한 면접 준비·모의 면접·답변 코칭 스킬입니다 트리거: "면접 준비해줘", "예상 질문 뽑아줘", "모의 면접 해줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -246,7 +245,7 @@ STAR보다 더 짧고 인상적. 임원 면접 권장.
 모범 답변 스크립트·자기소개 1분 원고·역질문 문안 등 면접 준비물의 서술 텍스트는 사람이 읽고 말하는 산출물입니다. 답변 초안을 다듬을 때 다음 체인을 거쳐 AI 패턴을 제거하고 자연스러운 구어체 한국어로 만듭니다.
 
 ```
-gil:interview-coach → gil:ai-slop-reviewer → gil:humanize-korean
+gil:interview-coach → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — "최선을 다했습니다" 류 추상 답변·클리셰 등 AI 패턴 1차 검수·교정

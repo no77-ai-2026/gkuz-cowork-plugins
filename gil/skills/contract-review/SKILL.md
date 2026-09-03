@@ -2,8 +2,7 @@
 name: contract-review
 description: |
   계약서 검토, 이용약관, 개인정보처리방침 등 법률 문서를 분석하고 작성합니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -176,7 +175,7 @@ version: "2.2.0"
 계약서 초안·수정 권고안·이용약관·개인정보처리방침·SLA 등 서술형 산출물은 작성 후 반드시 다음 체인으로 마무리합니다.
 
 ```
-contract-review → gil:ai-slop-reviewer → gil:humanize-korean
+contract-review → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - **gil:ai-slop-reviewer**: AI 글쓰기 패턴(과장·상투구·획일적 구조) 검수

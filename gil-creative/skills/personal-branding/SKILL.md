@@ -2,8 +2,7 @@
 name: personal-branding
 description: |
   개인의 전문성과 경력을 브랜드로 정리해 포지셔닝·콘텐츠·채널 전략 문서를 만들어 드립니다 트리거: "프리랜서 디자이너 개인 브랜딩 전략 세워줘", "퍼스널 브랜딩 처음부터 도와줘", "링크드인 프로필 최적화해줘"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -200,7 +199,7 @@ version: "2.1.0"
 
 태그라인·포지셔닝 스테이트먼트·콘텐츠 전략 원고·프로필 소개 문구 등 **텍스트 산출물**은 발행 전 반드시 후처리 체인을 거칩니다. 포지셔닝 맵·KPI 표 등 표·수치 산출물은 대상이 아닙니다.
 
-**권장 체인**: `personal-branding → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인**: `personal-branding → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

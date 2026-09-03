@@ -2,8 +2,7 @@
 name: econ-literacy
 description: |
   금리·환율·물가 같은 경제지표를 '내 돈' 관점에서 읽도록 도와주는 스킬입니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 

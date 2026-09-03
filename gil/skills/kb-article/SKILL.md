@@ -2,8 +2,7 @@
 name: kb-article
 description: |
   고객지원 지식베이스 문서를 작성합니다 트리거: "FAQ 만들어줘", "트러블슈팅 가이드 작성해줘", "헬프센터 아티클 써줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -119,7 +118,7 @@ version: "2.2.0"
 KB 아티클(FAQ·가이드·트러블슈팅) 본문을 작성한 뒤에는 다음 체인으로 마무리합니다:
 
 ```
-kb-article → gil:ai-slop-reviewer → gil:humanize-korean
+kb-article → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — AI 티 나는 표현·과잉 수식·기계적 문장 패턴을 검수·수정

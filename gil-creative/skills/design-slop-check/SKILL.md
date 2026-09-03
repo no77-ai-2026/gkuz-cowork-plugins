@@ -2,8 +2,7 @@
 name: design-slop-check
 description: |
   Claude Design에서 생성된 결과 카피(헤드라인·서브헤드·CTA·feature·푸터)를 AI 슬롭 패턴으로 검수합니다 트리거: "Claude Design 카피 검수", "AI 슬롭 점검", "AI 티 나는 카피 확인"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -184,7 +183,7 @@ Tier 2 표현은 **문맥**에 따라 슬롭 여부가 달라집니다. 다음�
 ## 후속 처리 추천
 
 1. 위 수정을 Claude Design 채팅에 다시 요청
-2. 한국어 카피 자연화 → gil:humanize-korean
+2. 한국어 카피 자연화 → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 3. 영문 카피 후속 검수 → 영문 카피 베스트 프랙티스 가이드
 ```
 

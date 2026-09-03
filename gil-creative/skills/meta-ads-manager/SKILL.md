@@ -2,8 +2,7 @@
 name: meta-ads-manager
 description: |
   페이스북·인스타그램 광고를 자연어로 직접 만들고 켜고 끄고 예산까지 조정해 드립니다 트리거: "메타 광고 만들어줘", "인스타 광고 캠페인 생성해줘", "광고세트 추가해줘"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 

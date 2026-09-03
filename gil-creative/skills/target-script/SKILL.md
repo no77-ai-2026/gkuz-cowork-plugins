@@ -2,8 +2,7 @@
 name: target-script
 description: |
   타겟 고객을 분석해 그들의 고민(페인포인트)을 짚고, 채널별로 바로 쓸 수 있는 맞춤 메시지·카피를 만들어 드립니다 트리거: "타겟 고객 맞춤 메시지 만들어줘", "타겟 메시징 전략 짜줘", "우리 고객 페르소나 분석해서 카피 써줘"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -219,7 +218,7 @@ Markdown 형식의 구조화된 문서로 출력됩니다:
 
 생성된 타겟 스크립트는 반드시 후처리 체인을 거쳐야 합니다: `gil:ai-slop-reviewer`로 AI 패턴(반복적 표현, 과장된 어조, 추상적 문장)을 제거한 뒤, `gil:humanize-korean`으로 한국어 어투의 AI 티를 다듬어 실전 즉시 활용 가능한 구체적이고 자연스러운 스크립트로 변환합니다.
 
-**권장 체인**: `target-script → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인**: `target-script → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

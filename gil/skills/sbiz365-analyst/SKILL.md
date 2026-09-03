@@ -2,8 +2,7 @@
 name: sbiz365-analyst
 description: |
   소상공인365(bigdata.sbiz.or.kr)에서 받은 상권분석 PDF를 첨부하면, 유동인구·경쟁 점포·예상 매출을 분석한 창업 타당성 보고서(Word)를 만들어… 트리거: "이 상권 PDF 분석해줘", "소상공인365 보고서 분석해줘", "이 지역에서 창업해도 될까?"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -192,7 +191,7 @@ Claude 기본 Word 생성 금지.
 
 ---
 
-### Step 5: AI 슬롭 검수 + 한국어 다듬기 (gil:ai-slop-reviewer → gil:humanize-korean)
+### Step 5: AI 슬롭 검수 + 한국어 다듬기 (gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6))
 
 **반드시 마지막 단계**로 체인 `gil:ai-slop-reviewer → gil:humanize-korean`을 실행합니다.
 우선순위: `anthropic-skills:ai-slop-reviewer` > `gil:ai-slop-reviewer`.

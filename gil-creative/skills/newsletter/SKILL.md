@@ -2,8 +2,7 @@
 name: newsletter
 description: |
   이메일 뉴스레터(제목·프리헤더·본문·CTA)와 구독자 확보 전략·콘텐츠 캘린더를 만들어 드립니다 트리거: "스타트업 위클리 뉴스레터 첫 호 써줘", "오픈율 높이는 이메일 제목 후보 10가지 만들어줘", "구독자 1,000명 확보 전략 기획해줘"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -192,12 +191,12 @@ persona:
 
 ## 발행 (WordPress MCP)
 
-ai-slop 검수 → humanize 체인까지 마친 완성 뉴스레터 본문은, 이 플러그인의 `.mcp.json`에 등록된 WordPress MCP 커넥터(mcp.wordpress.com)로 바로 발행할 수 있습니다(웹 아카이브용 포스트 발행 시).
+ai-slop 검수 → humanize 체인까지 마친 완성 뉴스레터 본문은, 이 플러그인의 `.mcp.json`에 등록된 WordPress MCP 커넥터(public-api.wordpress.com, OAuth)로 바로 발행할 수 있습니다(웹 아카이브용 포스트 발행 시).
 
 - 흐름: **draft 저장 → 사용자 검토 → 발행** (제목·본문·태그 반영)
 - 커넥터 미연결 시 본문 마크다운만 반환하고 "Settings > Connectors에서 WordPress 연결" 안내
 - Stibee·Mailchimp 등 이메일 발송 플랫폼은 발행 자동화 대상이 아니므로, 발송용 본문은 그대로 복사해 사용합니다
-- SNS 예고·동시 발행이 필요하면 같은 `.mcp.json`의 post-bridge·typefully 커넥터로 크로스포스트할 수 있습니다
+- SNS 예고·동시 발행이 필요하면 같은 `.mcp.json`의 typefully 커넥터(mcp.typefully.com, OAuth)로 크로스포스트할 수 있습니다
 
 ## 관련 스킬
 

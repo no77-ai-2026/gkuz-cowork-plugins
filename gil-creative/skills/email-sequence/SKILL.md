@@ -2,8 +2,7 @@
 name: email-sequence
 description: |
   가입·구매 후 단계별로 자동 발송할 이메일 시퀀스(발송 시점·제목·본문 초안)를 한국 정보통신망법에 맞게 설계해 드립니다 트리거: "신규 가입자 온보딩 이메일 7단계로 만들어줘", "이메일 자동화 시퀀스 짜줘", "드립 캠페인 설계해줘"
-user-invocable: true
-version: "2.1.0"
+version: "2.2.1"
 ---
 ## 스킬 개요(상세)
 
@@ -196,7 +195,7 @@ AIDA 원칙(Attention-Interest-Desire-Action)을 적용하여 제목(30자 이�
 
 각 단계 이메일 본문·제목·프리헤더 등 **텍스트 산출물**은 발송 전 반드시 후처리 체인을 거칩니다. 시퀀스 플로우 다이어그램·KPI 표 등 구조·수치 산출물은 대상이 아닙니다.
 
-**권장 체인**: `email-sequence → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인**: `email-sequence → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

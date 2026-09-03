@@ -2,7 +2,7 @@
 name: growth-experiment
 description: |
   A/B 테스트 설계, 실험 백로그 우선순위화(ICE/PIE), 바이럴·추천 루프, 무료 도구·공동 마케팅 같은 그로스 실험을 설계해 드립니다. 트리거: "A/B 테스트 가설이랑 설계 짜줘 (샘플 크기·유의성 포함)", "실험 백로그 ICE 점수로 우선순위 매겨줘", "추천(레퍼럴) 프로그램이랑 바이럴 루프 설계해줘"
-version: "2.1.0"
+version: "2.2.1"
 uz: n/a
 origin: moai-cowork@f1eb954
 ---
@@ -183,7 +183,7 @@ A/B 테스트 설계, 실험 백로그 우선순위화(ICE/PIE), 바이럴·추�
 
 가설 설명·성장 루프 설계 서술·파트너십 제안 등 **서술형(prose) 산출물**은 발행 전 후처리 체인을 거칩니다. 샘플 크기 계산·ICE 점수표·지표 위계 표 등 **수치·표 산출물은 대상이 아닙니다**.
 
-**권장 체인(서술형 부분)**: `growth-experiment(서술형) → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인(서술형 부분)**: `growth-experiment(서술형) → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

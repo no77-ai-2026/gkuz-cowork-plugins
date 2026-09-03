@@ -1,16 +1,14 @@
 {
   "mcpServers": {
-    "post-bridge": {
-      "type": "http",
-      "url": "https://app.post-bridge.com/mcp"
-    },
     "typefully": {
+      "$comment": "Typefully 공식 hosted MCP. [2026-09-02 주소 교체] 구 https://api.typefully.com/mcp 는 404 — 사용 금지. 새 주소는 401 + RFC 9728 OAuth 디스커버리(첫 연결 시 브라우저 인증).",
       "type": "http",
-      "url": "https://api.typefully.com/mcp"
+      "url": "https://mcp.typefully.com/mcp"
     },
     "wordpress": {
+      "$comment": "WordPress.com 공식 MCP. [2026-09-02 주소 교체] 구 https://mcp.wordpress.com/mcp 는 302 안내 페이지(HTML) — 사용 금지. 새 주소는 401 + WWW-Authenticate resource_metadata(OAuth). post-bridge는 공식 호스팅 MCP 부재(NXDOMAIN)로 제거.",
       "type": "http",
-      "url": "https://mcp.wordpress.com/mcp"
+      "url": "https://public-api.wordpress.com/wpcom/v2/mcp/v1"
     },
     "meta-ads": {
       "$comment": "Meta 공식 Ads AI Connectors (2026-04-29 오픈 베타, hosted at https://mcp.facebook.com/ads). 인증: Meta Business OAuth 2.0 커넥터 흐름 (RFC 9728 protected-resource discovery + RFC 6750 Bearer). Claude 원격 MCP 커넥터로 URL 등록 시 브라우저 OAuth 로그인·광고계정 선택으로 토큰 자동 발급 — 정적 토큰 불필요. scope: ads_management ads_read catalog_management business_management pages_show_list. 개발자/시스템 사용자 정적 토큰은 fallback 전용 (./CONNECTORS.md §Meta Ads). 비활성 환경에서는 Layer 2 gil-ads-audit이 .xlsx 보고서 fallback으로 동작 (SPEC-MOAI-ADS-AUDIT-MCP-001 REQ-AUDIT-MCP-005). 라이브 운영 스킬: gil:meta-ads-manager (Layer 3).",
@@ -23,17 +21,26 @@
       "url": "https://mcp.higgsfield.ai/mcp"
     },
     "ElevenLabs": {
-      "$comment": "ElevenLabs 공식 MCP (github.com/elevenlabs/elevenlabs-mcp) — TTS·보이스 클로닝·다국어 더빙·효과음. audio-gen 스킬 전용. 사전 설치: curl -LsSf https://astral.sh/uv/install.sh | sh. ELEVENLABS_API_KEY 필수 (elevenlabs.io/app/settings/api-keys 발급). 옵션: ELEVENLABS_MCP_BASE_PATH (기본 ~/Desktop), ELEVENLABS_MCP_OUTPUT_MODE (files/resources/both), ELEVENLABS_API_RESIDENCY (us 등).",
-      "command": "uvx",
+      "$comment": "ElevenLabs 공식 MCP (github.com/elevenlabs/elevenlabs-mcp) — TTS·보이스 클로닝·다국어 더빙·효과음. audio-gen 스킬 전용. 사전 설치: curl -LsSf https://astral.sh/uv/install.sh | sh. ELEVENLABS_API_KEY 필수 (elevenlabs.io/app/settings/api-keys 발급). 옵션: ELEVENLABS_MCP_BASE_PATH (기본 ~/Desktop), ELEVENLABS_MCP_OUTPUT_MODE (files/resources/both), ELEVENLABS_API_RESIDENCY (us 등). [2026-09-03 v2.3.1] 제3자 서버라 mcp-launch 런처가 앞에 선다 — ${user_config}/환경변수/~/.gil/mcp/elevenlabs.json에서 키를 채운 뒤 uvx elevenlabs-mcp를 대체 실행.",
+      "command": "uv",
       "args": [
+        "run",
+        "--script",
+        "${CLAUDE_PLUGIN_ROOT}/mcp-launch/mcp_launch.py",
+        "--service",
+        "elevenlabs",
+        "--keys",
+        "ELEVENLABS_API_KEY",
+        "--",
+        "uvx",
         "elevenlabs-mcp"
       ],
       "env": {
-        "ELEVENLABS_API_KEY": "${ELEVENLABS_API_KEY}"
+        "ELEVENLABS_API_KEY": "${user_config.ELEVENLABS_API_KEY}"
       }
     },
     "gil-mcp-threads-poster": {
-      "$comment": "Threads(Meta) Graph API 자동 포스팅 MCP — 텍스트/이미지/비디오 2단계 발행(create container → publish). OAuth2 Bearer. 사전 설치: uv. 소스 자체 vendor(mcp-servers/gil-mcp-threads-poster) — PyPI 불필요. 자격증명 절차: mcp-servers/gil-mcp-threads-poster/CONNECTORS.md. 라이브 스킬: gil-creative:threads-post-draft·threads-multichannel. Origin: modu-ai/moai-cowork@f1eb954 (Apache-2.0).",
+      "$comment": "Threads(Meta) Graph API 자동 포스팅 MCP — 텍스트/이미지/비디오 2단계 발행(create container → publish). OAuth2 Bearer. 사전 설치: uv. 소스 자체 vendor(mcp-servers/gil-mcp-threads-poster) — PyPI 불필요. 자격증명 절차: mcp-servers/gil-mcp-threads-poster/CONNECTORS.md. 라이브 스킬: gil-creative:threads-post-draft·threads-multichannel. Origin: modu-ai/moai-cowork@f1eb954 (Apache-2.0). [2026-09-03 v2.3.1] 자격증명 ${user_config.KEY} → 환경변수 → ~/.gil/mcp/threads_poster.json 순 해석. THREADS_PUBLISH_DELAY는 파일/환경변수로만(기본 30).",
       "command": "uv",
       "args": [
         "run",
@@ -42,11 +49,10 @@
         "gil-mcp-threads-poster"
       ],
       "env": {
-        "THREADS_ACCESS_TOKEN": "${THREADS_ACCESS_TOKEN}",
-        "THREADS_USER_ID": "${THREADS_USER_ID}",
-        "THREADS_PUBLISH_DELAY": "${THREADS_PUBLISH_DELAY}",
-        "IG_ACCESS_TOKEN": "${IG_ACCESS_TOKEN}",
-        "IG_USER_ID": "${IG_USER_ID}"
+        "THREADS_ACCESS_TOKEN": "${user_config.THREADS_ACCESS_TOKEN}",
+        "THREADS_USER_ID": "${user_config.THREADS_USER_ID}",
+        "IG_ACCESS_TOKEN": "${user_config.IG_ACCESS_TOKEN}",
+        "IG_USER_ID": "${user_config.IG_USER_ID}"
       }
     }
   },

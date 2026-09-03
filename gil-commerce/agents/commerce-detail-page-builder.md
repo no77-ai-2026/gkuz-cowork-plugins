@@ -33,7 +33,7 @@ effort: medium
 3. `gil-commerce:detail-page-image` — 상세페이지 이미지 구성
 4. `gil-commerce:detail-page-copy` — 상세페이지 카피
 
-**마감**: (카피 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+**마감**: (카피 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 
 ## Cowork 환경 제약
 

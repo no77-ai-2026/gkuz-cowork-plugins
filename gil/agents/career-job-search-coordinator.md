@@ -23,7 +23,7 @@ effort: medium
 1. `gil:job-analyzer` — 공고·직무 분석 (WebSearch로 기업/직무 보강)
 2. `gil:resume-builder` — 맞춤 이력서
 3. `gil:portfolio-guide` — 포트폴리오 구성
-4. (이력서·포트폴리오 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+4. (이력서·포트폴리오 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 5. `gil:interview-coach` — 예상 질문·면접 코칭
 
 ## Cowork 환경 제약

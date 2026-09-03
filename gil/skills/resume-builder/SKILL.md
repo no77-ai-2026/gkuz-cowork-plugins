@@ -2,8 +2,7 @@
 name: resume-builder
 description: |
   한국 취준생·재직 이직자를 위한 자기소개서·이력서·경력기술서·영문 CV·링크드인 작성 스킬입니다 트리거: "자소서 써줘", "이력서 만들어줘", "경력기술서 정리해줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -77,7 +76,7 @@ CAR (Challenge - Action - Result)
 채용 담당자가 AI 텍스트를 구분하는 시대에는, 초안을 직접 손보는 자체 체크리스트보다 검증된 후처리 체인에 맡기는 편이 일관됩니다. 자소서·이력서·경력기술서 초안을 완성한 뒤 다음 체인을 반드시 거칩니다.
 
 ```
-resume-builder → gil:ai-slop-reviewer → gil:humanize-korean
+resume-builder → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — "~한 경험이 있습니다", "성장했습니다" 같은 범용 표현, 클리셰 결론, 형용사 남발 등 AI 패턴을 1차 검수·교정합니다.
@@ -209,7 +208,7 @@ resume-builder → gil:ai-slop-reviewer → gil:humanize-korean
 자소서·이력서·경력기술서·CV·LinkedIn 텍스트는 모두 사람이 읽는 산출물입니다. 초안 완성 후 다음 체인을 반드시 거쳐 AI 패턴을 제거하고 자연스러운 한국어로 다듬습니다.
 
 ```
-gil:resume-builder → gil:ai-slop-reviewer → gil:humanize-korean
+gil:resume-builder → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — AI 생성 패턴(범용 표현·클리셰·형용사 남발) 1차 검수·교정

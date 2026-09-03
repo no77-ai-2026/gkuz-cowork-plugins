@@ -2,8 +2,7 @@
 name: court-auction-search
 description: |
   대법원 법원경매정보(courtauction.go.kr) 부동산 매각공고를 매각기일·법원·기일/기간 트리거: "오늘 어디서 부동산 경매 열려?", "내일 매각공고 보여줘", "서울중앙지방법원 2026-04-27 매각공고"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 

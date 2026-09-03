@@ -2,8 +2,7 @@
 name: financial-statements
 description: |
   재무제표를 만들어주는 스킬입니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -180,7 +179,7 @@ K-IFRS(한국채택국제회계기준)에 따른 재무제표 작성을 지원�
 재무제표 분석 코멘트, 주석 초안의 서술 문단, 재무비율 해설, 경영진 보고용 설명문처럼 문장 산출물을 작성한 뒤에는 아래 체인으로 마무리한다.
 
 ```
-financial-statements (해설·코멘트 부분) → gil:ai-slop-reviewer → gil:humanize-korean
+financial-statements (해설·코멘트 부분) → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - **gil:ai-slop-reviewer**: AI 티 나는 표현·과장·상투구 검수 및 수정

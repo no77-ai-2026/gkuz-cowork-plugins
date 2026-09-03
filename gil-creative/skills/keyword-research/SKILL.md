@@ -2,7 +2,7 @@
 name: keyword-research
 description: |
   새 페이지·콘텐츠·캠페인을 위해 네이버·구글·AI 검색(GEO)에서 노릴 키워드를 발굴하고, 검색 의도·경쟁도·롱테일로 분류해 토픽 클러스터로 묶어 드립니다. 트리거: "이 주제로 뭐 쓸지 키워드 뽑아줘", "검색 의도별로 키워드 분류해줘", "롱테일 키워드 발굴해줘"
-version: "2.1.0"
+version: "2.2.1"
 origin: moai-cowork@f1eb954
 ---
 
@@ -164,7 +164,7 @@ origin: moai-cowork@f1eb954
 
 키워드 전략 설명·클러스터 근거·채널 전략 등 **서술형(prose) 산출물**은 발행 전 후처리 체인을 거칩니다. 키워드 목록표·검색량 수치·우선순위 점수표 등 **수치·표 산출물은 대상이 아닙니다**.
 
-**권장 체인(서술형 권고)**: `keyword-research(서술형 권고) → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인(서술형 권고)**: `keyword-research(서술형 권고) → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

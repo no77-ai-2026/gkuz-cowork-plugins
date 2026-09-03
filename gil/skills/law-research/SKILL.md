@@ -2,7 +2,7 @@
 name: law-research
 description: |
   법제처 법령·판례·행정규칙·자치법규·조약·해석례(국세청) 원문 조회와 LLM 환각방지 인용검증·판례 생사 확인·행위시법 판단·조문 영향 그래프·신구대조표를 전담합니다. korean-law MCP(법제처 42개 API → 9 도구) 사용. 트리거: "근로기준법 제74조 본문 알려줘", "이 답변에 인용된 조문 실존하는지 검증해줘", "이 판례 아직 유효한가"
-version: "2.2.0"
+version: "2.3.1"
 origin: moai-cowork@f1eb954
 ---
 
@@ -77,7 +77,7 @@ origin: moai-cowork@f1eb954
 `korean-law` MCP는 법제처 Open API OC 키가 사용자마다 필요하다 (공용키 모덜 아님).
 
 ```
-IF KOREAN_LAW_OC 미설정 (또는 .mcp.json URL 의 ?oc= 이 빈 값):
+IF KOREAN_LAW_OC 미설정 (또는 .mcp.json URL 의 ?oc= 이 빈 값 / `${user_config.KOREAN_LAW_OC}` 미입력):
   "법령 조회를 위해 법제처 Open API OC 키가 필요합니다.
 
    발급 방법 (무료, 즉시):
@@ -87,7 +87,7 @@ IF KOREAN_LAW_OC 미설정 (또는 .mcp.json URL 의 ?oc= 이 빈 값):
 
    설정 방법:
    - .mcp.json 의 korean-law 항목 URL ?oc=<본인키> 에 보간
-   - 또는 환경변수 KOREAN_LAW_OC 등록
+   - 또는 gil 플러그인 설정 화면의 입력 폼 `법제처 Open API OC 키`(userConfig)에 등록 — 환경변수는 Claude Code CLI에서만 유효
 
    키를 입력해 주세요:"
 

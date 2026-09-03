@@ -2,8 +2,7 @@
 name: oda-monitoring-report
 description: |
   ODA 사업 모니터링·평가 보고서를 작성합니다
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 

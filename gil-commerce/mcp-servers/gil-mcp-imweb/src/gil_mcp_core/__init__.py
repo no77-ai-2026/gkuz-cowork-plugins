@@ -7,11 +7,12 @@
 각 서버의 `src/gil_mcp_core/` 는 `scripts/sync-mcp-core.py` 가 만든 복제본이며
 **직접 수정하면 다음 동기화에서 덮어써진다.**
 
-설계 근거: `.moai/reports/mcp-naming-consolidation-design.md` §3, §4-1.
+설계 근거: `.gil/reports/mcp-naming-consolidation-design.md` §3, §4-1.
 """
 
 from .auth import OAuth2Config, OAuth2Refresher
 from .cache import TTLCache
+from .credentials import CredentialStore, is_unset, load as load_credentials
 from .errors import (
     AuthError,
     McpToolError,
@@ -29,6 +30,7 @@ __version__ = "0.1.0"
 __all__ = [
     "DEFAULT_DIR",
     "AuthError",
+    "CredentialStore",
     "HttpClient",
     "McpToolError",
     "OAuth2Config",
@@ -39,5 +41,7 @@ __all__ = [
     "TTLCache",
     "TokenStore",
     "UpstreamError",
+    "is_unset",
+    "load_credentials",
     "to_tool_result",
 ]

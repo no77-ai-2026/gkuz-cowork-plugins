@@ -2,7 +2,7 @@
 name: retention
 description: |
   이탈을 막고 떠난 고객을 되돌리는 마케팅 측 리텐션 설계 — 이탈 방지 캠페인, 재참여·윈백(winback) 시퀀스, 라이프사이클 메시지, 리텐션 지표(리텐션 커브·코호트·이탈률)를 만들어 드립니다. 트리거: "이탈 방지 캠페인 설계해줘", "떠난 고객 되돌리는 윈백 이메일 시퀀스 짜줘", "90일 미접속 고객 재참여(re-engagement) 플로우 만들어줘"
-version: "2.1.0"
+version: "2.2.1"
 uz: n/a
 origin: moai-cowork@f1eb954
 ---
@@ -187,7 +187,7 @@ origin: moai-cowork@f1eb954
 
 재참여·윈백 이메일 본문·제목, 세이브 오퍼 카피, 라이프사이클 메시지 등 **텍스트 산출물**은 발송 전 반드시 후처리 체인을 거칩니다. 헬스 스코어 표·리텐션 커브·이탈률 KPI 등 구조·수치 산출물은 대상이 아닙니다.
 
-**권장 체인(텍스트)**: `retention(텍스트) → gil:ai-slop-reviewer → gil:humanize-korean`
+**권장 체인(텍스트)**: `retention(텍스트) → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)`
 
 ## 관련 스킬
 

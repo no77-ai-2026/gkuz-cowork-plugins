@@ -2,8 +2,7 @@
 name: past-exam-analyzer
 description: |
   [한·UZ 듀얼] 기출문제를 분석하고 다음 회차 출제 패턴을 예측하여 예상문제를 자동 생성합니다 트리거: "수능 5개년 분석", "공무원 기출 패턴", "다음 회차 예상문제"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 

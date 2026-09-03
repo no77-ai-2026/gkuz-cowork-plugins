@@ -23,7 +23,7 @@ effort: high
 1. `gil:paper-search` — 논문 검색 (WebSearch 보강)
 2. `gil:patent-search` → `gil:patent-analyzer` — 특허 조사·분석
 3. `gil:paper-writer` 또는 `gil:grant-writer` — 작성
-4. (원고 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean`
+4. (원고 텍스트) → `gil:ai-slop-reviewer` → `gil:humanize-korean` → 최종 검수(◆최종본, humanize Phase 6)
 
 ## Cowork 환경 제약
 

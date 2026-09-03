@@ -2,8 +2,7 @@
 name: process-manager
 description: |
   업무 프로세스를 문서화하고 표준화합니다 트리거: "SOP 만들어줘", "구매 요청서 써줘", "회의록 정리해줘"
-user-invocable: true
-version: "2.2.0"
+version: "2.3.1"
 ---
 ## 스킬 개요(상세)
 
@@ -65,7 +64,7 @@ version: "2.2.0"
 SOP, 운영 매뉴얼, 회의록, 조달 문서 등 **서술형 산출물**은 다음 체인으로 마무리합니다.
 
 ```
-process-manager → gil:ai-slop-reviewer → gil:humanize-korean
+process-manager → gil:ai-slop-reviewer → gil:humanize-korean → 최종 검수(◆최종본, humanize Phase 6)
 ```
 
 - `gil:ai-slop-reviewer` — 문서 본문의 AI 티 패턴을 검수·수정합니다.
